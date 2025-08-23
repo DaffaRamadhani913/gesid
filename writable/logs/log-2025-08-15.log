@@ -1,0 +1,140 @@
+DEBUG - 2025-08-15 07:53:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-15 07:53:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-15 07:53:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-15 08:35:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-15 08:36:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-15 08:36:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-15 08:36:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-15 08:36:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-08-15 08:36:45 --> mysqli_sql_exception: Unknown column 'prov.nama' in 'field list' in C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.*, `...', 0)
+#1 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.*, `...')
+#2 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.*, `...')
+#3 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.*, `...', Array, false)
+#4 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\app\Controllers\MemberController.php(97): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(933): App\Controllers\MemberController->dashboard()
+#6 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MemberController))
+#7 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\rewrite.php(44): require_once('C:\\Users\\USER\\D...')
+#12 {main}
+CRITICAL - 2025-08-15 08:36:45 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'prov.nama' in 'field list'
+[Method: GET, Route: memberadmin]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.*, `prov`.`nama` AS `nama_provinsi`, `kota`.`nama` AS `nama_kota`, `kec`.`nama` AS `nama_kecamatan`, `desa`.`nama` AS `nama_desa`
+FROM `tb_members` `m`
+LEFT JOIN `tb_provinsi` `prov` ON `prov`.`id_provinsi` = `m`.`id_provinsi`
+LEFT JOIN `tb_kota_kabupaten` `kota` ON `kota`.`id_kota` = `m`.`id_kota`
+LEFT JOIN `tb_kecamatan` `kec` ON `kec`.`id_kecamatan` = `m`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` `desa` ON `desa`.`id_desa` = `m`.`id_desa`
+WHERE `m`.`user_id` = :m.user_id:', [...], false)
+ 2 APPPATH\Controllers\MemberController.php(97): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MemberController->dashboard()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MemberController))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+CRITICAL - 2025-08-15 08:36:45 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'prov.nama' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.*, `prov`.`nama` AS `nama_provinsi`, `kota`.`nama` AS `nama_kota`, `kec`.`nama` AS `nama_kecamatan`, `desa`.`nama` AS `nama_desa`
+FROM `tb_members` `m`
+LEFT JOIN `tb_provinsi` `prov` ON `prov`.`id_provinsi` = `m`.`id_provinsi`
+LEFT JOIN `tb_kota_kabupaten` `kota` ON `kota`.`id_kota` = `m`.`id_kota`
+LEFT JOIN `tb_kecamatan` `kec` ON `kec`.`id_kecamatan` = `m`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` `desa` ON `desa`.`id_desa` = `m`.`id_desa`
+WHERE `m`.`user_id` = \'18\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.*, `prov`.`nama` AS `nama_provinsi`, `kota`.`nama` AS `nama_kota`, `kec`.`nama` AS `nama_kecamatan`, `desa`.`nama` AS `nama_desa`
+FROM `tb_members` `m`
+LEFT JOIN `tb_provinsi` `prov` ON `prov`.`id_provinsi` = `m`.`id_provinsi`
+LEFT JOIN `tb_kota_kabupaten` `kota` ON `kota`.`id_kota` = `m`.`id_kota`
+LEFT JOIN `tb_kecamatan` `kec` ON `kec`.`id_kecamatan` = `m`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` `desa` ON `desa`.`id_desa` = `m`.`id_desa`
+WHERE `m`.`user_id` = \'18\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.*, `prov`.`nama` AS `nama_provinsi`, `kota`.`nama` AS `nama_kota`, `kec`.`nama` AS `nama_kecamatan`, `desa`.`nama` AS `nama_desa`
+FROM `tb_members` `m`
+LEFT JOIN `tb_provinsi` `prov` ON `prov`.`id_provinsi` = `m`.`id_provinsi`
+LEFT JOIN `tb_kota_kabupaten` `kota` ON `kota`.`id_kota` = `m`.`id_kota`
+LEFT JOIN `tb_kecamatan` `kec` ON `kec`.`id_kecamatan` = `m`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` `desa` ON `desa`.`id_desa` = `m`.`id_desa`
+WHERE `m`.`user_id` = :m.user_id:', [...], false)
+ 4 APPPATH\Controllers\MemberController.php(97): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MemberController->dashboard()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MemberController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+CRITICAL - 2025-08-15 08:36:45 --> [Caused by] mysqli_sql_exception: Unknown column 'prov.nama' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `m`.*, `prov`.`nama` AS `nama_provinsi`, `kota`.`nama` AS `nama_kota`, `kec`.`nama` AS `nama_kecamatan`, `desa`.`nama` AS `nama_desa`
+FROM `tb_members` `m`
+LEFT JOIN `tb_provinsi` `prov` ON `prov`.`id_provinsi` = `m`.`id_provinsi`
+LEFT JOIN `tb_kota_kabupaten` `kota` ON `kota`.`id_kota` = `m`.`id_kota`
+LEFT JOIN `tb_kecamatan` `kec` ON `kec`.`id_kecamatan` = `m`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` `desa` ON `desa`.`id_desa` = `m`.`id_desa`
+WHERE `m`.`user_id` = \'18\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.*, `prov`.`nama` AS `nama_provinsi`, `kota`.`nama` AS `nama_kota`, `kec`.`nama` AS `nama_kecamatan`, `desa`.`nama` AS `nama_desa`
+FROM `tb_members` `m`
+LEFT JOIN `tb_provinsi` `prov` ON `prov`.`id_provinsi` = `m`.`id_provinsi`
+LEFT JOIN `tb_kota_kabupaten` `kota` ON `kota`.`id_kota` = `m`.`id_kota`
+LEFT JOIN `tb_kecamatan` `kec` ON `kec`.`id_kecamatan` = `m`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` `desa` ON `desa`.`id_desa` = `m`.`id_desa`
+WHERE `m`.`user_id` = \'18\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.*, `prov`.`nama` AS `nama_provinsi`, `kota`.`nama` AS `nama_kota`, `kec`.`nama` AS `nama_kecamatan`, `desa`.`nama` AS `nama_desa`
+FROM `tb_members` `m`
+LEFT JOIN `tb_provinsi` `prov` ON `prov`.`id_provinsi` = `m`.`id_provinsi`
+LEFT JOIN `tb_kota_kabupaten` `kota` ON `kota`.`id_kota` = `m`.`id_kota`
+LEFT JOIN `tb_kecamatan` `kec` ON `kec`.`id_kecamatan` = `m`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` `desa` ON `desa`.`id_desa` = `m`.`id_desa`
+WHERE `m`.`user_id` = \'18\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `m`.*, `prov`.`nama` AS `nama_provinsi`, `kota`.`nama` AS `nama_kota`, `kec`.`nama` AS `nama_kecamatan`, `desa`.`nama` AS `nama_desa`
+FROM `tb_members` `m`
+LEFT JOIN `tb_provinsi` `prov` ON `prov`.`id_provinsi` = `m`.`id_provinsi`
+LEFT JOIN `tb_kota_kabupaten` `kota` ON `kota`.`id_kota` = `m`.`id_kota`
+LEFT JOIN `tb_kecamatan` `kec` ON `kec`.`id_kecamatan` = `m`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` `desa` ON `desa`.`id_desa` = `m`.`id_desa`
+WHERE `m`.`user_id` = :m.user_id:', [...], false)
+ 5 APPPATH\Controllers\MemberController.php(97): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MemberController->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MemberController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+DEBUG - 2025-08-15 08:38:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-15 08:38:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-15 08:38:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-15 08:38:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-15 08:38:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-15 08:38:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-15 08:38:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-15 08:38:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-15 08:38:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-15 08:39:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-15 08:39:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-15 08:39:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-15 08:39:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-15 08:39:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-15 08:39:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-15 08:39:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-15 08:39:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-15 08:39:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-15 08:39:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-15 08:39:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-15 08:39:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-15 08:39:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-15 08:39:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-15 08:39:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-15 08:39:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-15 08:39:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-15 08:39:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-15 08:39:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-15 08:39:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-15 08:39:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

@@ -1,0 +1,916 @@
+DEBUG - 2025-08-23 03:24:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 04:03:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 04:03:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 04:03:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 04:05:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 04:05:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-08-23 04:05:06 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/layout.php"
+[Method: GET, Route: admin/bpn/buat-artikel]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/layout.php')
+ 2 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('admin/layout', [], true)
+ 3 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/bpn/artikel/buat', [], true)
+ 4 APPPATH\Controllers\admin\Bpn.php(84): view('admin/bpn/artikel/buat', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Bpn->buatArtikel()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Bpn))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+DEBUG - 2025-08-23 04:05:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 04:22:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 04:23:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 04:24:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 04:30:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 04:31:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 04:31:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 04:41:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 04:43:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 04:43:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 04:43:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 04:45:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 04:45:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 04:45:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 04:46:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 04:46:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 04:46:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 04:54:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 04:54:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 04:54:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-08-23 04:54:39 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/bpn/index.php"
+[Method: GET, Route: admin/bpn/artikel]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/bpn/index.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/bpn/index', [], true)
+ 3 APPPATH\Controllers\admin\Bpn.php(85): view('admin/bpn/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Bpn->indexArtikel()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Bpn))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+DEBUG - 2025-08-23 04:55:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-08-23 04:55:04 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/layout/template.php"
+[Method: GET, Route: admin/bpn/artikel]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/layout/template.php')
+ 2 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('admin/layout/template', [], true)
+ 3 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/bpn/artikel/index', [], true)
+ 4 APPPATH\Controllers\admin\Bpn.php(85): view('admin/bpn/artikel/index', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Bpn->indexArtikel()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Bpn))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+DEBUG - 2025-08-23 04:55:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-08-23 04:55:06 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/layout/template.php"
+[Method: GET, Route: admin/bpn/artikel]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/layout/template.php')
+ 2 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('admin/layout/template', [], true)
+ 3 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/bpn/artikel/index', [], true)
+ 4 APPPATH\Controllers\admin\Bpn.php(85): view('admin/bpn/artikel/index', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Bpn->indexArtikel()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Bpn))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+DEBUG - 2025-08-23 04:55:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 04:55:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 04:56:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 04:56:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 04:56:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 04:56:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 04:56:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 04:57:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 04:59:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 04:59:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 04:59:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 04:59:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 04:59:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 04:59:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 04:59:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 04:59:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:00:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:01:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:01:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:02:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:02:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-08-23 05:02:52 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/bpn/edit.php"
+[Method: GET, Route: admin/bpn/edit-artikel/1]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/bpn/edit.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/bpn/edit', [], true)
+ 3 APPPATH\Controllers\admin\Bpn.php(150): view('admin/bpn/edit', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Bpn->editArtikel('1')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Bpn))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+DEBUG - 2025-08-23 05:03:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:05:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:05:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:05:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:05:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:05:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:06:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:06:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:06:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:06:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:06:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:08:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:08:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:08:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:09:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:10:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-08-23 05:10:22 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\ArtikelModel::updateArtikel
+[Method: POST, Route: admin/bpn/update-artikel/1]
+in SYSTEMPATH\Model.php on line 930.
+ 1 APPPATH\Controllers\admin\Bpn.php(180): CodeIgniter\Model->__call('updateArtikel', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Bpn->updateArtikel('1')
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Bpn))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+DEBUG - 2025-08-23 05:14:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:14:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:14:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:14:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:15:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:15:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:15:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:15:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:15:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:15:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:15:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:17:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:17:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:17:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:17:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:17:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:17:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:17:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:17:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:18:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:18:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:18:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:18:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:20:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:20:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:20:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:20:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:21:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:22:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:22:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:23:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:23:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:24:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-08-23 05:42:14 --> mysqli_sql_exception: Table 'db_gesid.users' doesn't exist in C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `tb_arti...', 0)
+#1 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_arti...')
+#2 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_arti...')
+#3 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_arti...', Array, false)
+#4 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\app\Models\ArtikelModel.php(42): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\app\Controllers\Artikel.php(21): App\Models\ArtikelModel->getApprovedArticles()
+#8 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(933): App\Controllers\Artikel->index()
+#9 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+#10 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\rewrite.php(44): require_once('C:\\Users\\USER\\D...')
+#15 {main}
+CRITICAL - 2025-08-23 05:42:14 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'db_gesid.users' doesn't exist
+[Method: GET, Route: artikel]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = :tb_artikel.status:
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\ArtikelModel.php(42): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Artikel.php(21): App\Models\ArtikelModel->getApprovedArticles()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+CRITICAL - 2025-08-23 05:42:14 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'db_gesid.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = \'approved\'
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = \'approved\'
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = :tb_artikel.status:
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\ArtikelModel.php(42): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Artikel.php(21): App\Models\ArtikelModel->getApprovedArticles()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+CRITICAL - 2025-08-23 05:42:14 --> [Caused by] mysqli_sql_exception: Table 'db_gesid.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = \'approved\'
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = \'approved\'
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = \'approved\'
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = :tb_artikel.status:
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\ArtikelModel.php(42): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Artikel.php(21): App\Models\ArtikelModel->getApprovedArticles()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+ERROR - 2025-08-23 05:43:48 --> mysqli_sql_exception: Table 'db_gesid.users' doesn't exist in C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `tb_arti...', 0)
+#1 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_arti...')
+#2 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_arti...')
+#3 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_arti...', Array, false)
+#4 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\app\Models\ArtikelModel.php(42): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\app\Controllers\Artikel.php(21): App\Models\ArtikelModel->getApprovedArticles()
+#8 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(933): App\Controllers\Artikel->index()
+#9 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+#10 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\rewrite.php(44): require_once('C:\\Users\\USER\\D...')
+#15 {main}
+CRITICAL - 2025-08-23 05:43:48 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'db_gesid.users' doesn't exist
+[Method: GET, Route: artikel]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = :tb_artikel.status:
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\ArtikelModel.php(42): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Artikel.php(21): App\Models\ArtikelModel->getApprovedArticles()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+CRITICAL - 2025-08-23 05:43:48 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'db_gesid.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = \'approved\'
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = \'approved\'
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = :tb_artikel.status:
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\ArtikelModel.php(42): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Artikel.php(21): App\Models\ArtikelModel->getApprovedArticles()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+CRITICAL - 2025-08-23 05:43:48 --> [Caused by] mysqli_sql_exception: Table 'db_gesid.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = \'approved\'
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = \'approved\'
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = \'approved\'
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = :tb_artikel.status:
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\ArtikelModel.php(42): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Artikel.php(21): App\Models\ArtikelModel->getApprovedArticles()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+ERROR - 2025-08-23 05:43:57 --> mysqli_sql_exception: Table 'db_gesid.users' doesn't exist in C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `tb_arti...', 0)
+#1 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_arti...')
+#2 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_arti...')
+#3 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_arti...', Array, false)
+#4 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\app\Models\ArtikelModel.php(42): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\app\Controllers\Artikel.php(21): App\Models\ArtikelModel->getApprovedArticles()
+#8 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(933): App\Controllers\Artikel->index()
+#9 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+#10 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\rewrite.php(44): require_once('C:\\Users\\USER\\D...')
+#15 {main}
+CRITICAL - 2025-08-23 05:43:57 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'db_gesid.users' doesn't exist
+[Method: GET, Route: artikel]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = :tb_artikel.status:
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\ArtikelModel.php(42): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Artikel.php(21): App\Models\ArtikelModel->getApprovedArticles()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+CRITICAL - 2025-08-23 05:43:57 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'db_gesid.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = \'approved\'
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = \'approved\'
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = :tb_artikel.status:
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\ArtikelModel.php(42): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Artikel.php(21): App\Models\ArtikelModel->getApprovedArticles()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+CRITICAL - 2025-08-23 05:43:57 --> [Caused by] mysqli_sql_exception: Table 'db_gesid.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = \'approved\'
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = \'approved\'
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = \'approved\'
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = :tb_artikel.status:
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\ArtikelModel.php(42): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Artikel.php(21): App\Models\ArtikelModel->getApprovedArticles()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+ERROR - 2025-08-23 05:45:06 --> mysqli_sql_exception: Table 'db_gesid.users' doesn't exist in C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `tb_arti...', 0)
+#1 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_arti...')
+#2 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_arti...')
+#3 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_arti...', Array, false)
+#4 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\app\Models\ArtikelModel.php(42): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\app\Controllers\Artikel.php(21): App\Models\ArtikelModel->getApprovedArticles()
+#8 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(933): App\Controllers\Artikel->index()
+#9 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+#10 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\rewrite.php(44): require_once('C:\\Users\\USER\\D...')
+#15 {main}
+CRITICAL - 2025-08-23 05:45:06 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'db_gesid.users' doesn't exist
+[Method: GET, Route: artikel]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = :tb_artikel.status:
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\ArtikelModel.php(42): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Artikel.php(21): App\Models\ArtikelModel->getApprovedArticles()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+CRITICAL - 2025-08-23 05:45:06 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'db_gesid.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = \'approved\'
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = \'approved\'
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = :tb_artikel.status:
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\ArtikelModel.php(42): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Artikel.php(21): App\Models\ArtikelModel->getApprovedArticles()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+CRITICAL - 2025-08-23 05:45:06 --> [Caused by] mysqli_sql_exception: Table 'db_gesid.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = \'approved\'
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = \'approved\'
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = \'approved\'
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = :tb_artikel.status:
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\ArtikelModel.php(42): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Artikel.php(21): App\Models\ArtikelModel->getApprovedArticles()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+DEBUG - 2025-08-23 05:46:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:46:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:46:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-08-23 05:46:06 --> mysqli_sql_exception: Table 'db_gesid.users' doesn't exist in C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `tb_arti...', 0)
+#1 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_arti...')
+#2 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_arti...')
+#3 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_arti...', Array, false)
+#4 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\app\Models\ArtikelModel.php(42): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\app\Controllers\Artikel.php(21): App\Models\ArtikelModel->getApprovedArticles()
+#8 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(933): App\Controllers\Artikel->index()
+#9 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+#10 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\rewrite.php(44): require_once('C:\\Users\\USER\\D...')
+#15 {main}
+CRITICAL - 2025-08-23 05:46:06 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'db_gesid.users' doesn't exist
+[Method: GET, Route: artikel]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = :tb_artikel.status:
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\ArtikelModel.php(42): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Artikel.php(21): App\Models\ArtikelModel->getApprovedArticles()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+CRITICAL - 2025-08-23 05:46:06 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'db_gesid.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = \'approved\'
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = \'approved\'
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = :tb_artikel.status:
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\ArtikelModel.php(42): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Artikel.php(21): App\Models\ArtikelModel->getApprovedArticles()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+CRITICAL - 2025-08-23 05:46:06 --> [Caused by] mysqli_sql_exception: Table 'db_gesid.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = \'approved\'
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = \'approved\'
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = \'approved\'
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = :tb_artikel.status:
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\ArtikelModel.php(42): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Artikel.php(21): App\Models\ArtikelModel->getApprovedArticles()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+DEBUG - 2025-08-23 05:46:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-08-23 05:48:32 --> mysqli_sql_exception: Table 'db_gesid.users' doesn't exist in C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `tb_arti...', 0)
+#1 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_arti...')
+#2 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_arti...')
+#3 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_arti...', Array, false)
+#4 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\app\Models\ArtikelModel.php(42): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\app\Controllers\Artikel.php(21): App\Models\ArtikelModel->getApprovedArticles()
+#8 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(933): App\Controllers\Artikel->index()
+#9 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+#10 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\rewrite.php(44): require_once('C:\\Users\\USER\\D...')
+#15 {main}
+CRITICAL - 2025-08-23 05:48:32 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'db_gesid.users' doesn't exist
+[Method: GET, Route: artikel]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = :tb_artikel.status:
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\ArtikelModel.php(42): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Artikel.php(21): App\Models\ArtikelModel->getApprovedArticles()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+CRITICAL - 2025-08-23 05:48:32 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'db_gesid.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = \'approved\'
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = \'approved\'
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = :tb_artikel.status:
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\ArtikelModel.php(42): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Artikel.php(21): App\Models\ArtikelModel->getApprovedArticles()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+CRITICAL - 2025-08-23 05:48:32 --> [Caused by] mysqli_sql_exception: Table 'db_gesid.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = \'approved\'
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = \'approved\'
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = \'approved\'
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_artikel`.*, `users`.`role`, `provinsi`.`nama` as `provinsi_nama`, `kabupaten`.`nama` as `kabupaten_nama`, `desa`.`nama` as `desa_nama`
+FROM `tb_artikel`
+JOIN `users` ON `users`.`id` = `tb_artikel`.`created_by`
+LEFT JOIN `provinsi` ON `provinsi`.`id` = `users`.`provinsi_id`
+LEFT JOIN `kabupaten` ON `kabupaten`.`id` = `users`.`kabupaten_id`
+LEFT JOIN `desa` ON `desa`.`id` = `users`.`desa_id`
+WHERE `tb_artikel`.`status` = :tb_artikel.status:
+ORDER BY `tb_artikel`.`tanggal_publikasi` DESC', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\ArtikelModel.php(42): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Artikel.php(21): App\Models\ArtikelModel->getApprovedArticles()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Artikel->index()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+DEBUG - 2025-08-23 05:52:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:52:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-23 05:52:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

@@ -1,0 +1,1355 @@
+DEBUG - 2025-08-14 02:32:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 02:32:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-08-14 02:32:05 --> mysqli_sql_exception: Unknown column 'prov.nama' in 'field list' in C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `tb_memb...', 0)
+#1 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_memb...')
+#2 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_memb...')
+#3 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_memb...', Array, false)
+#4 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\app\Controllers\admin\Bpn.php(47): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(933): App\Controllers\Admin\Bpn->dashboard()
+#8 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Bpn))
+#9 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\rewrite.php(44): require_once('C:\\Users\\USER\\D...')
+#14 {main}
+CRITICAL - 2025-08-14 02:32:05 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'prov.nama' in 'field list'
+[Method: GET, Route: admin/bpn]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_members`.*, `prov`.`nama` as `nama_provinsi`, `kota`.`nama` as `nama_kota`, `kec`.`nama` as `nama_kecamatan`, `desa`.`nama` as `nama_desa`
+FROM `tb_members`
+LEFT JOIN `tb_provinsi` `prov` ON `prov`.`id_provinsi` = `tb_members`.`id_provinsi`
+LEFT JOIN `tb_kota_kabupaten` `kota` ON `kota`.`id_kota` = `tb_members`.`id_kota`
+LEFT JOIN `tb_kecamatan` `kec` ON `kec`.`id_kecamatan` = `tb_members`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` `desa` ON `desa`.`id_desa` = `tb_members`.`id_desa`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\admin\Bpn.php(47): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Bpn->dashboard()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Bpn))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+CRITICAL - 2025-08-14 02:32:05 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'prov.nama' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_members`.*, `prov`.`nama` as `nama_provinsi`, `kota`.`nama` as `nama_kota`, `kec`.`nama` as `nama_kecamatan`, `desa`.`nama` as `nama_desa`
+FROM `tb_members`
+LEFT JOIN `tb_provinsi` `prov` ON `prov`.`id_provinsi` = `tb_members`.`id_provinsi`
+LEFT JOIN `tb_kota_kabupaten` `kota` ON `kota`.`id_kota` = `tb_members`.`id_kota`
+LEFT JOIN `tb_kecamatan` `kec` ON `kec`.`id_kecamatan` = `tb_members`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` `desa` ON `desa`.`id_desa` = `tb_members`.`id_desa`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_members`.*, `prov`.`nama` as `nama_provinsi`, `kota`.`nama` as `nama_kota`, `kec`.`nama` as `nama_kecamatan`, `desa`.`nama` as `nama_desa`
+FROM `tb_members`
+LEFT JOIN `tb_provinsi` `prov` ON `prov`.`id_provinsi` = `tb_members`.`id_provinsi`
+LEFT JOIN `tb_kota_kabupaten` `kota` ON `kota`.`id_kota` = `tb_members`.`id_kota`
+LEFT JOIN `tb_kecamatan` `kec` ON `kec`.`id_kecamatan` = `tb_members`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` `desa` ON `desa`.`id_desa` = `tb_members`.`id_desa`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_members`.*, `prov`.`nama` as `nama_provinsi`, `kota`.`nama` as `nama_kota`, `kec`.`nama` as `nama_kecamatan`, `desa`.`nama` as `nama_desa`
+FROM `tb_members`
+LEFT JOIN `tb_provinsi` `prov` ON `prov`.`id_provinsi` = `tb_members`.`id_provinsi`
+LEFT JOIN `tb_kota_kabupaten` `kota` ON `kota`.`id_kota` = `tb_members`.`id_kota`
+LEFT JOIN `tb_kecamatan` `kec` ON `kec`.`id_kecamatan` = `tb_members`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` `desa` ON `desa`.`id_desa` = `tb_members`.`id_desa`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\admin\Bpn.php(47): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Bpn->dashboard()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Bpn))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+CRITICAL - 2025-08-14 02:32:05 --> [Caused by] mysqli_sql_exception: Unknown column 'prov.nama' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `tb_members`.*, `prov`.`nama` as `nama_provinsi`, `kota`.`nama` as `nama_kota`, `kec`.`nama` as `nama_kecamatan`, `desa`.`nama` as `nama_desa`
+FROM `tb_members`
+LEFT JOIN `tb_provinsi` `prov` ON `prov`.`id_provinsi` = `tb_members`.`id_provinsi`
+LEFT JOIN `tb_kota_kabupaten` `kota` ON `kota`.`id_kota` = `tb_members`.`id_kota`
+LEFT JOIN `tb_kecamatan` `kec` ON `kec`.`id_kecamatan` = `tb_members`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` `desa` ON `desa`.`id_desa` = `tb_members`.`id_desa`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_members`.*, `prov`.`nama` as `nama_provinsi`, `kota`.`nama` as `nama_kota`, `kec`.`nama` as `nama_kecamatan`, `desa`.`nama` as `nama_desa`
+FROM `tb_members`
+LEFT JOIN `tb_provinsi` `prov` ON `prov`.`id_provinsi` = `tb_members`.`id_provinsi`
+LEFT JOIN `tb_kota_kabupaten` `kota` ON `kota`.`id_kota` = `tb_members`.`id_kota`
+LEFT JOIN `tb_kecamatan` `kec` ON `kec`.`id_kecamatan` = `tb_members`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` `desa` ON `desa`.`id_desa` = `tb_members`.`id_desa`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_members`.*, `prov`.`nama` as `nama_provinsi`, `kota`.`nama` as `nama_kota`, `kec`.`nama` as `nama_kecamatan`, `desa`.`nama` as `nama_desa`
+FROM `tb_members`
+LEFT JOIN `tb_provinsi` `prov` ON `prov`.`id_provinsi` = `tb_members`.`id_provinsi`
+LEFT JOIN `tb_kota_kabupaten` `kota` ON `kota`.`id_kota` = `tb_members`.`id_kota`
+LEFT JOIN `tb_kecamatan` `kec` ON `kec`.`id_kecamatan` = `tb_members`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` `desa` ON `desa`.`id_desa` = `tb_members`.`id_desa`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_members`.*, `prov`.`nama` as `nama_provinsi`, `kota`.`nama` as `nama_kota`, `kec`.`nama` as `nama_kecamatan`, `desa`.`nama` as `nama_desa`
+FROM `tb_members`
+LEFT JOIN `tb_provinsi` `prov` ON `prov`.`id_provinsi` = `tb_members`.`id_provinsi`
+LEFT JOIN `tb_kota_kabupaten` `kota` ON `kota`.`id_kota` = `tb_members`.`id_kota`
+LEFT JOIN `tb_kecamatan` `kec` ON `kec`.`id_kecamatan` = `tb_members`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` `desa` ON `desa`.`id_desa` = `tb_members`.`id_desa`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\admin\Bpn.php(47): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Bpn->dashboard()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Bpn))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+DEBUG - 2025-08-14 02:45:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 02:45:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 02:45:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 02:46:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 02:46:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 02:48:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 03:39:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 03:57:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 04:07:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 04:07:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 04:08:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 04:08:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-08-14 04:08:08 --> mysqli_sql_exception: Table 'db_gesid.tb_kota' doesn't exist in C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `tb_bpde...', 0)
+#1 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_bpde...')
+#2 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_bpde...')
+#3 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_bpde...', Array, false)
+#4 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\app\Controllers\admin\TambahAdmin\BpdesController.php(34): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(933): App\Controllers\Admin\TambahAdmin\BpdesController->index()
+#8 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\TambahAdmin\BpdesController))
+#9 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\rewrite.php(44): require_once('C:\\Users\\USER\\D...')
+#14 {main}
+CRITICAL - 2025-08-14 04:08:09 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'db_gesid.tb_kota' doesn't exist
+[Method: GET, Route: admin/bpd/adminbpdes]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_bpdes`.*, `tb_kota`.`nama_kota`, `tb_kecamatan`.`nama_kecamatan`, `tb_desa`.`nama_desa`
+FROM `tb_bpdes`
+LEFT JOIN `tb_kota` ON `tb_kota`.`id_kota` = `tb_bpdes`.`id_kota`
+LEFT JOIN `tb_kecamatan` ON `tb_kecamatan`.`id_kecamatan` = `tb_bpdes`.`id_kecamatan`
+LEFT JOIN `tb_desa` ON `tb_desa`.`id_desa` = `tb_bpdes`.`id_desa`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\admin\TambahAdmin\BpdesController.php(34): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\TambahAdmin\BpdesController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\TambahAdmin\BpdesController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+CRITICAL - 2025-08-14 04:08:09 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'db_gesid.tb_kota' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_bpdes`.*, `tb_kota`.`nama_kota`, `tb_kecamatan`.`nama_kecamatan`, `tb_desa`.`nama_desa`
+FROM `tb_bpdes`
+LEFT JOIN `tb_kota` ON `tb_kota`.`id_kota` = `tb_bpdes`.`id_kota`
+LEFT JOIN `tb_kecamatan` ON `tb_kecamatan`.`id_kecamatan` = `tb_bpdes`.`id_kecamatan`
+LEFT JOIN `tb_desa` ON `tb_desa`.`id_desa` = `tb_bpdes`.`id_desa`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_bpdes`.*, `tb_kota`.`nama_kota`, `tb_kecamatan`.`nama_kecamatan`, `tb_desa`.`nama_desa`
+FROM `tb_bpdes`
+LEFT JOIN `tb_kota` ON `tb_kota`.`id_kota` = `tb_bpdes`.`id_kota`
+LEFT JOIN `tb_kecamatan` ON `tb_kecamatan`.`id_kecamatan` = `tb_bpdes`.`id_kecamatan`
+LEFT JOIN `tb_desa` ON `tb_desa`.`id_desa` = `tb_bpdes`.`id_desa`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_bpdes`.*, `tb_kota`.`nama_kota`, `tb_kecamatan`.`nama_kecamatan`, `tb_desa`.`nama_desa`
+FROM `tb_bpdes`
+LEFT JOIN `tb_kota` ON `tb_kota`.`id_kota` = `tb_bpdes`.`id_kota`
+LEFT JOIN `tb_kecamatan` ON `tb_kecamatan`.`id_kecamatan` = `tb_bpdes`.`id_kecamatan`
+LEFT JOIN `tb_desa` ON `tb_desa`.`id_desa` = `tb_bpdes`.`id_desa`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\admin\TambahAdmin\BpdesController.php(34): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\TambahAdmin\BpdesController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\TambahAdmin\BpdesController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+CRITICAL - 2025-08-14 04:08:09 --> [Caused by] mysqli_sql_exception: Table 'db_gesid.tb_kota' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `tb_bpdes`.*, `tb_kota`.`nama_kota`, `tb_kecamatan`.`nama_kecamatan`, `tb_desa`.`nama_desa`
+FROM `tb_bpdes`
+LEFT JOIN `tb_kota` ON `tb_kota`.`id_kota` = `tb_bpdes`.`id_kota`
+LEFT JOIN `tb_kecamatan` ON `tb_kecamatan`.`id_kecamatan` = `tb_bpdes`.`id_kecamatan`
+LEFT JOIN `tb_desa` ON `tb_desa`.`id_desa` = `tb_bpdes`.`id_desa`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_bpdes`.*, `tb_kota`.`nama_kota`, `tb_kecamatan`.`nama_kecamatan`, `tb_desa`.`nama_desa`
+FROM `tb_bpdes`
+LEFT JOIN `tb_kota` ON `tb_kota`.`id_kota` = `tb_bpdes`.`id_kota`
+LEFT JOIN `tb_kecamatan` ON `tb_kecamatan`.`id_kecamatan` = `tb_bpdes`.`id_kecamatan`
+LEFT JOIN `tb_desa` ON `tb_desa`.`id_desa` = `tb_bpdes`.`id_desa`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_bpdes`.*, `tb_kota`.`nama_kota`, `tb_kecamatan`.`nama_kecamatan`, `tb_desa`.`nama_desa`
+FROM `tb_bpdes`
+LEFT JOIN `tb_kota` ON `tb_kota`.`id_kota` = `tb_bpdes`.`id_kota`
+LEFT JOIN `tb_kecamatan` ON `tb_kecamatan`.`id_kecamatan` = `tb_bpdes`.`id_kecamatan`
+LEFT JOIN `tb_desa` ON `tb_desa`.`id_desa` = `tb_bpdes`.`id_desa`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_bpdes`.*, `tb_kota`.`nama_kota`, `tb_kecamatan`.`nama_kecamatan`, `tb_desa`.`nama_desa`
+FROM `tb_bpdes`
+LEFT JOIN `tb_kota` ON `tb_kota`.`id_kota` = `tb_bpdes`.`id_kota`
+LEFT JOIN `tb_kecamatan` ON `tb_kecamatan`.`id_kecamatan` = `tb_bpdes`.`id_kecamatan`
+LEFT JOIN `tb_desa` ON `tb_desa`.`id_desa` = `tb_bpdes`.`id_desa`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\admin\TambahAdmin\BpdesController.php(34): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\TambahAdmin\BpdesController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\TambahAdmin\BpdesController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+ERROR - 2025-08-14 04:09:31 --> mysqli_sql_exception: Unknown column 'tb_bpdes.id_kota' in 'on clause' in C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `tb_bpde...', 0)
+#1 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_bpde...')
+#2 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_bpde...')
+#3 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_bpde...', Array, false)
+#4 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\app\Controllers\admin\TambahAdmin\BpdesController.php(34): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(933): App\Controllers\Admin\TambahAdmin\BpdesController->index()
+#8 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\TambahAdmin\BpdesController))
+#9 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\rewrite.php(44): require_once('C:\\Users\\USER\\D...')
+#14 {main}
+CRITICAL - 2025-08-14 04:09:31 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tb_bpdes.id_kota' in 'on clause'
+[Method: GET, Route: admin/bpd/adminbpdes]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_bpdes`.*, `tb_kota_kabupaten`.`nama_kota`, `tb_kecamatan`.`nama_kecamatan`, `tb_desa_kelurahan`.`nama_desa`
+FROM `tb_bpdes`
+LEFT JOIN `tb_kota_kabupaten` ON `tb_kota_kabupaten`.`id_kota` = `tb_bpdes`.`id_kota`
+LEFT JOIN `tb_kecamatan` ON `tb_kecamatan`.`id_kecamatan` = `tb_bpdes`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` ON `tb_desa_kelurahan`.`id_desa` = `tb_bpdes`.`id_desa`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\admin\TambahAdmin\BpdesController.php(34): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\TambahAdmin\BpdesController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\TambahAdmin\BpdesController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+CRITICAL - 2025-08-14 04:09:31 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tb_bpdes.id_kota' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_bpdes`.*, `tb_kota_kabupaten`.`nama_kota`, `tb_kecamatan`.`nama_kecamatan`, `tb_desa_kelurahan`.`nama_desa`
+FROM `tb_bpdes`
+LEFT JOIN `tb_kota_kabupaten` ON `tb_kota_kabupaten`.`id_kota` = `tb_bpdes`.`id_kota`
+LEFT JOIN `tb_kecamatan` ON `tb_kecamatan`.`id_kecamatan` = `tb_bpdes`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` ON `tb_desa_kelurahan`.`id_desa` = `tb_bpdes`.`id_desa`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_bpdes`.*, `tb_kota_kabupaten`.`nama_kota`, `tb_kecamatan`.`nama_kecamatan`, `tb_desa_kelurahan`.`nama_desa`
+FROM `tb_bpdes`
+LEFT JOIN `tb_kota_kabupaten` ON `tb_kota_kabupaten`.`id_kota` = `tb_bpdes`.`id_kota`
+LEFT JOIN `tb_kecamatan` ON `tb_kecamatan`.`id_kecamatan` = `tb_bpdes`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` ON `tb_desa_kelurahan`.`id_desa` = `tb_bpdes`.`id_desa`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_bpdes`.*, `tb_kota_kabupaten`.`nama_kota`, `tb_kecamatan`.`nama_kecamatan`, `tb_desa_kelurahan`.`nama_desa`
+FROM `tb_bpdes`
+LEFT JOIN `tb_kota_kabupaten` ON `tb_kota_kabupaten`.`id_kota` = `tb_bpdes`.`id_kota`
+LEFT JOIN `tb_kecamatan` ON `tb_kecamatan`.`id_kecamatan` = `tb_bpdes`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` ON `tb_desa_kelurahan`.`id_desa` = `tb_bpdes`.`id_desa`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\admin\TambahAdmin\BpdesController.php(34): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\TambahAdmin\BpdesController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\TambahAdmin\BpdesController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+CRITICAL - 2025-08-14 04:09:31 --> [Caused by] mysqli_sql_exception: Unknown column 'tb_bpdes.id_kota' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `tb_bpdes`.*, `tb_kota_kabupaten`.`nama_kota`, `tb_kecamatan`.`nama_kecamatan`, `tb_desa_kelurahan`.`nama_desa`
+FROM `tb_bpdes`
+LEFT JOIN `tb_kota_kabupaten` ON `tb_kota_kabupaten`.`id_kota` = `tb_bpdes`.`id_kota`
+LEFT JOIN `tb_kecamatan` ON `tb_kecamatan`.`id_kecamatan` = `tb_bpdes`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` ON `tb_desa_kelurahan`.`id_desa` = `tb_bpdes`.`id_desa`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_bpdes`.*, `tb_kota_kabupaten`.`nama_kota`, `tb_kecamatan`.`nama_kecamatan`, `tb_desa_kelurahan`.`nama_desa`
+FROM `tb_bpdes`
+LEFT JOIN `tb_kota_kabupaten` ON `tb_kota_kabupaten`.`id_kota` = `tb_bpdes`.`id_kota`
+LEFT JOIN `tb_kecamatan` ON `tb_kecamatan`.`id_kecamatan` = `tb_bpdes`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` ON `tb_desa_kelurahan`.`id_desa` = `tb_bpdes`.`id_desa`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_bpdes`.*, `tb_kota_kabupaten`.`nama_kota`, `tb_kecamatan`.`nama_kecamatan`, `tb_desa_kelurahan`.`nama_desa`
+FROM `tb_bpdes`
+LEFT JOIN `tb_kota_kabupaten` ON `tb_kota_kabupaten`.`id_kota` = `tb_bpdes`.`id_kota`
+LEFT JOIN `tb_kecamatan` ON `tb_kecamatan`.`id_kecamatan` = `tb_bpdes`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` ON `tb_desa_kelurahan`.`id_desa` = `tb_bpdes`.`id_desa`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_bpdes`.*, `tb_kota_kabupaten`.`nama_kota`, `tb_kecamatan`.`nama_kecamatan`, `tb_desa_kelurahan`.`nama_desa`
+FROM `tb_bpdes`
+LEFT JOIN `tb_kota_kabupaten` ON `tb_kota_kabupaten`.`id_kota` = `tb_bpdes`.`id_kota`
+LEFT JOIN `tb_kecamatan` ON `tb_kecamatan`.`id_kecamatan` = `tb_bpdes`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` ON `tb_desa_kelurahan`.`id_desa` = `tb_bpdes`.`id_desa`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\admin\TambahAdmin\BpdesController.php(34): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\TambahAdmin\BpdesController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\TambahAdmin\BpdesController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+ERROR - 2025-08-14 04:14:22 --> mysqli_sql_exception: Unknown column 'tb_kota_kabupaten.nama_kota' in 'field list' in C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `tb_bpde...', 0)
+#1 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_bpde...')
+#2 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_bpde...')
+#3 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_bpde...', Array, false)
+#4 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\app\Controllers\admin\TambahAdmin\BpdesController.php(34): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(933): App\Controllers\Admin\TambahAdmin\BpdesController->index()
+#8 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\TambahAdmin\BpdesController))
+#9 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\rewrite.php(44): require_once('C:\\Users\\USER\\D...')
+#14 {main}
+CRITICAL - 2025-08-14 04:14:22 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tb_kota_kabupaten.nama_kota' in 'field list'
+[Method: GET, Route: admin/bpd/adminbpdes]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_bpdes`.*, `tb_kota_kabupaten`.`nama_kota`, `tb_kecamatan`.`nama_kecamatan`, `tb_desa_kelurahan`.`nama_desa`
+FROM `tb_bpdes`
+LEFT JOIN `tb_desa_kelurahan` ON `tb_desa_kelurahan`.`id_desa` = `tb_bpdes`.`id_desa`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\admin\TambahAdmin\BpdesController.php(34): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\TambahAdmin\BpdesController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\TambahAdmin\BpdesController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+CRITICAL - 2025-08-14 04:14:22 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tb_kota_kabupaten.nama_kota' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_bpdes`.*, `tb_kota_kabupaten`.`nama_kota`, `tb_kecamatan`.`nama_kecamatan`, `tb_desa_kelurahan`.`nama_desa`
+FROM `tb_bpdes`
+LEFT JOIN `tb_desa_kelurahan` ON `tb_desa_kelurahan`.`id_desa` = `tb_bpdes`.`id_desa`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_bpdes`.*, `tb_kota_kabupaten`.`nama_kota`, `tb_kecamatan`.`nama_kecamatan`, `tb_desa_kelurahan`.`nama_desa`
+FROM `tb_bpdes`
+LEFT JOIN `tb_desa_kelurahan` ON `tb_desa_kelurahan`.`id_desa` = `tb_bpdes`.`id_desa`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_bpdes`.*, `tb_kota_kabupaten`.`nama_kota`, `tb_kecamatan`.`nama_kecamatan`, `tb_desa_kelurahan`.`nama_desa`
+FROM `tb_bpdes`
+LEFT JOIN `tb_desa_kelurahan` ON `tb_desa_kelurahan`.`id_desa` = `tb_bpdes`.`id_desa`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\admin\TambahAdmin\BpdesController.php(34): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\TambahAdmin\BpdesController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\TambahAdmin\BpdesController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+CRITICAL - 2025-08-14 04:14:22 --> [Caused by] mysqli_sql_exception: Unknown column 'tb_kota_kabupaten.nama_kota' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `tb_bpdes`.*, `tb_kota_kabupaten`.`nama_kota`, `tb_kecamatan`.`nama_kecamatan`, `tb_desa_kelurahan`.`nama_desa`
+FROM `tb_bpdes`
+LEFT JOIN `tb_desa_kelurahan` ON `tb_desa_kelurahan`.`id_desa` = `tb_bpdes`.`id_desa`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_bpdes`.*, `tb_kota_kabupaten`.`nama_kota`, `tb_kecamatan`.`nama_kecamatan`, `tb_desa_kelurahan`.`nama_desa`
+FROM `tb_bpdes`
+LEFT JOIN `tb_desa_kelurahan` ON `tb_desa_kelurahan`.`id_desa` = `tb_bpdes`.`id_desa`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_bpdes`.*, `tb_kota_kabupaten`.`nama_kota`, `tb_kecamatan`.`nama_kecamatan`, `tb_desa_kelurahan`.`nama_desa`
+FROM `tb_bpdes`
+LEFT JOIN `tb_desa_kelurahan` ON `tb_desa_kelurahan`.`id_desa` = `tb_bpdes`.`id_desa`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_bpdes`.*, `tb_kota_kabupaten`.`nama_kota`, `tb_kecamatan`.`nama_kecamatan`, `tb_desa_kelurahan`.`nama_desa`
+FROM `tb_bpdes`
+LEFT JOIN `tb_desa_kelurahan` ON `tb_desa_kelurahan`.`id_desa` = `tb_bpdes`.`id_desa`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\admin\TambahAdmin\BpdesController.php(34): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\TambahAdmin\BpdesController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\TambahAdmin\BpdesController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+CRITICAL - 2025-08-14 04:14:42 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/bpd/tampilan/adminbpdes/index.php"
+[Method: GET, Route: admin/bpd/adminbpdes]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/bpd/tampilan/adminbpdes/index.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/bpd/tampilan/adminbpdes/index', [], true)
+ 3 APPPATH\Controllers\admin\TambahAdmin\BpdesController.php(36): view('admin/bpd/tampilan/adminbpdes/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\TambahAdmin\BpdesController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\TambahAdmin\BpdesController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+ERROR - 2025-08-14 04:14:56 --> mysqli_sql_exception: Unknown column 'tb_bpdes.id_kota' in 'on clause' in C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `tb_bpde...', 0)
+#1 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_bpde...')
+#2 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_bpde...')
+#3 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_bpde...', Array, false)
+#4 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\app\Controllers\admin\TambahAdmin\BpdesController.php(34): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(933): App\Controllers\Admin\TambahAdmin\BpdesController->index()
+#8 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\TambahAdmin\BpdesController))
+#9 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\rewrite.php(44): require_once('C:\\Users\\USER\\D...')
+#14 {main}
+CRITICAL - 2025-08-14 04:14:56 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tb_bpdes.id_kota' in 'on clause'
+[Method: GET, Route: admin/bpd/adminbpdes]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_bpdes`.*, `tb_kota_kabupaten`.`nama_kota`, `tb_kecamatan`.`nama_kecamatan`, `tb_desa_kelurahan`.`nama_desa`
+FROM `tb_bpdes`
+LEFT JOIN `tb_kota_kabupaten` ON `tb_kota_kabupaten`.`id_kota` = `tb_bpdes`.`id_kota`
+LEFT JOIN `tb_kecamatan` ON `tb_kecamatan`.`id_kecamatan` = `tb_bpdes`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` ON `tb_desa_kelurahan`.`id_desa` = `tb_bpdes`.`id_desa`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\admin\TambahAdmin\BpdesController.php(34): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\TambahAdmin\BpdesController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\TambahAdmin\BpdesController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+CRITICAL - 2025-08-14 04:14:56 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tb_bpdes.id_kota' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_bpdes`.*, `tb_kota_kabupaten`.`nama_kota`, `tb_kecamatan`.`nama_kecamatan`, `tb_desa_kelurahan`.`nama_desa`
+FROM `tb_bpdes`
+LEFT JOIN `tb_kota_kabupaten` ON `tb_kota_kabupaten`.`id_kota` = `tb_bpdes`.`id_kota`
+LEFT JOIN `tb_kecamatan` ON `tb_kecamatan`.`id_kecamatan` = `tb_bpdes`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` ON `tb_desa_kelurahan`.`id_desa` = `tb_bpdes`.`id_desa`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_bpdes`.*, `tb_kota_kabupaten`.`nama_kota`, `tb_kecamatan`.`nama_kecamatan`, `tb_desa_kelurahan`.`nama_desa`
+FROM `tb_bpdes`
+LEFT JOIN `tb_kota_kabupaten` ON `tb_kota_kabupaten`.`id_kota` = `tb_bpdes`.`id_kota`
+LEFT JOIN `tb_kecamatan` ON `tb_kecamatan`.`id_kecamatan` = `tb_bpdes`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` ON `tb_desa_kelurahan`.`id_desa` = `tb_bpdes`.`id_desa`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_bpdes`.*, `tb_kota_kabupaten`.`nama_kota`, `tb_kecamatan`.`nama_kecamatan`, `tb_desa_kelurahan`.`nama_desa`
+FROM `tb_bpdes`
+LEFT JOIN `tb_kota_kabupaten` ON `tb_kota_kabupaten`.`id_kota` = `tb_bpdes`.`id_kota`
+LEFT JOIN `tb_kecamatan` ON `tb_kecamatan`.`id_kecamatan` = `tb_bpdes`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` ON `tb_desa_kelurahan`.`id_desa` = `tb_bpdes`.`id_desa`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\admin\TambahAdmin\BpdesController.php(34): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\TambahAdmin\BpdesController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\TambahAdmin\BpdesController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+CRITICAL - 2025-08-14 04:14:56 --> [Caused by] mysqli_sql_exception: Unknown column 'tb_bpdes.id_kota' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `tb_bpdes`.*, `tb_kota_kabupaten`.`nama_kota`, `tb_kecamatan`.`nama_kecamatan`, `tb_desa_kelurahan`.`nama_desa`
+FROM `tb_bpdes`
+LEFT JOIN `tb_kota_kabupaten` ON `tb_kota_kabupaten`.`id_kota` = `tb_bpdes`.`id_kota`
+LEFT JOIN `tb_kecamatan` ON `tb_kecamatan`.`id_kecamatan` = `tb_bpdes`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` ON `tb_desa_kelurahan`.`id_desa` = `tb_bpdes`.`id_desa`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_bpdes`.*, `tb_kota_kabupaten`.`nama_kota`, `tb_kecamatan`.`nama_kecamatan`, `tb_desa_kelurahan`.`nama_desa`
+FROM `tb_bpdes`
+LEFT JOIN `tb_kota_kabupaten` ON `tb_kota_kabupaten`.`id_kota` = `tb_bpdes`.`id_kota`
+LEFT JOIN `tb_kecamatan` ON `tb_kecamatan`.`id_kecamatan` = `tb_bpdes`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` ON `tb_desa_kelurahan`.`id_desa` = `tb_bpdes`.`id_desa`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_bpdes`.*, `tb_kota_kabupaten`.`nama_kota`, `tb_kecamatan`.`nama_kecamatan`, `tb_desa_kelurahan`.`nama_desa`
+FROM `tb_bpdes`
+LEFT JOIN `tb_kota_kabupaten` ON `tb_kota_kabupaten`.`id_kota` = `tb_bpdes`.`id_kota`
+LEFT JOIN `tb_kecamatan` ON `tb_kecamatan`.`id_kecamatan` = `tb_bpdes`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` ON `tb_desa_kelurahan`.`id_desa` = `tb_bpdes`.`id_desa`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_bpdes`.*, `tb_kota_kabupaten`.`nama_kota`, `tb_kecamatan`.`nama_kecamatan`, `tb_desa_kelurahan`.`nama_desa`
+FROM `tb_bpdes`
+LEFT JOIN `tb_kota_kabupaten` ON `tb_kota_kabupaten`.`id_kota` = `tb_bpdes`.`id_kota`
+LEFT JOIN `tb_kecamatan` ON `tb_kecamatan`.`id_kecamatan` = `tb_bpdes`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` ON `tb_desa_kelurahan`.`id_desa` = `tb_bpdes`.`id_desa`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\admin\TambahAdmin\BpdesController.php(34): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\TambahAdmin\BpdesController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\TambahAdmin\BpdesController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+DEBUG - 2025-08-14 06:26:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 06:26:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 06:26:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-08-14 06:26:53 --> mysqli_sql_exception: Table 'db_gesid.tb_desa' doesn't exist in C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `tb_bpde...', 0)
+#1 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_bpde...')
+#2 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_bpde...')
+#3 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_bpde...', Array, false)
+#4 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\app\Controllers\admin\TambahAdmin\BpdesController.php(34): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(933): App\Controllers\Admin\TambahAdmin\BpdesController->index()
+#8 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\TambahAdmin\BpdesController))
+#9 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\rewrite.php(44): require_once('C:\\Users\\USER\\D...')
+#14 {main}
+CRITICAL - 2025-08-14 06:26:53 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'db_gesid.tb_desa' doesn't exist
+[Method: GET, Route: admin/bpd/adminbpdes]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_bpdes`.*, `tb_desa`.`nama_desa`, `tb_kecamatan`.`nama_kecamatan`, `tb_kota`.`nama_kota`
+FROM `tb_bpdes`
+LEFT JOIN `tb_desa` ON `tb_desa`.`id_desa` = `tb_bpdes`.`id_desa`
+LEFT JOIN `tb_kecamatan` ON `tb_kecamatan`.`id_kecamatan` = `tb_desa`.`id_kecamatan`
+LEFT JOIN `tb_kota` ON `tb_kota`.`id_kota` = `tb_kecamatan`.`id_kota`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\admin\TambahAdmin\BpdesController.php(34): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\TambahAdmin\BpdesController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\TambahAdmin\BpdesController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+CRITICAL - 2025-08-14 06:26:53 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'db_gesid.tb_desa' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_bpdes`.*, `tb_desa`.`nama_desa`, `tb_kecamatan`.`nama_kecamatan`, `tb_kota`.`nama_kota`
+FROM `tb_bpdes`
+LEFT JOIN `tb_desa` ON `tb_desa`.`id_desa` = `tb_bpdes`.`id_desa`
+LEFT JOIN `tb_kecamatan` ON `tb_kecamatan`.`id_kecamatan` = `tb_desa`.`id_kecamatan`
+LEFT JOIN `tb_kota` ON `tb_kota`.`id_kota` = `tb_kecamatan`.`id_kota`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_bpdes`.*, `tb_desa`.`nama_desa`, `tb_kecamatan`.`nama_kecamatan`, `tb_kota`.`nama_kota`
+FROM `tb_bpdes`
+LEFT JOIN `tb_desa` ON `tb_desa`.`id_desa` = `tb_bpdes`.`id_desa`
+LEFT JOIN `tb_kecamatan` ON `tb_kecamatan`.`id_kecamatan` = `tb_desa`.`id_kecamatan`
+LEFT JOIN `tb_kota` ON `tb_kota`.`id_kota` = `tb_kecamatan`.`id_kota`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_bpdes`.*, `tb_desa`.`nama_desa`, `tb_kecamatan`.`nama_kecamatan`, `tb_kota`.`nama_kota`
+FROM `tb_bpdes`
+LEFT JOIN `tb_desa` ON `tb_desa`.`id_desa` = `tb_bpdes`.`id_desa`
+LEFT JOIN `tb_kecamatan` ON `tb_kecamatan`.`id_kecamatan` = `tb_desa`.`id_kecamatan`
+LEFT JOIN `tb_kota` ON `tb_kota`.`id_kota` = `tb_kecamatan`.`id_kota`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\admin\TambahAdmin\BpdesController.php(34): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\TambahAdmin\BpdesController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\TambahAdmin\BpdesController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+CRITICAL - 2025-08-14 06:26:53 --> [Caused by] mysqli_sql_exception: Table 'db_gesid.tb_desa' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `tb_bpdes`.*, `tb_desa`.`nama_desa`, `tb_kecamatan`.`nama_kecamatan`, `tb_kota`.`nama_kota`
+FROM `tb_bpdes`
+LEFT JOIN `tb_desa` ON `tb_desa`.`id_desa` = `tb_bpdes`.`id_desa`
+LEFT JOIN `tb_kecamatan` ON `tb_kecamatan`.`id_kecamatan` = `tb_desa`.`id_kecamatan`
+LEFT JOIN `tb_kota` ON `tb_kota`.`id_kota` = `tb_kecamatan`.`id_kota`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_bpdes`.*, `tb_desa`.`nama_desa`, `tb_kecamatan`.`nama_kecamatan`, `tb_kota`.`nama_kota`
+FROM `tb_bpdes`
+LEFT JOIN `tb_desa` ON `tb_desa`.`id_desa` = `tb_bpdes`.`id_desa`
+LEFT JOIN `tb_kecamatan` ON `tb_kecamatan`.`id_kecamatan` = `tb_desa`.`id_kecamatan`
+LEFT JOIN `tb_kota` ON `tb_kota`.`id_kota` = `tb_kecamatan`.`id_kota`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_bpdes`.*, `tb_desa`.`nama_desa`, `tb_kecamatan`.`nama_kecamatan`, `tb_kota`.`nama_kota`
+FROM `tb_bpdes`
+LEFT JOIN `tb_desa` ON `tb_desa`.`id_desa` = `tb_bpdes`.`id_desa`
+LEFT JOIN `tb_kecamatan` ON `tb_kecamatan`.`id_kecamatan` = `tb_desa`.`id_kecamatan`
+LEFT JOIN `tb_kota` ON `tb_kota`.`id_kota` = `tb_kecamatan`.`id_kota`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_bpdes`.*, `tb_desa`.`nama_desa`, `tb_kecamatan`.`nama_kecamatan`, `tb_kota`.`nama_kota`
+FROM `tb_bpdes`
+LEFT JOIN `tb_desa` ON `tb_desa`.`id_desa` = `tb_bpdes`.`id_desa`
+LEFT JOIN `tb_kecamatan` ON `tb_kecamatan`.`id_kecamatan` = `tb_desa`.`id_kecamatan`
+LEFT JOIN `tb_kota` ON `tb_kota`.`id_kota` = `tb_kecamatan`.`id_kota`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\admin\TambahAdmin\BpdesController.php(34): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\TambahAdmin\BpdesController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\TambahAdmin\BpdesController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+CRITICAL - 2025-08-14 06:27:36 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/bpdes/index.php"
+[Method: GET, Route: admin/bpd/adminbpdes]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/bpdes/index.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/bpdes/index', [], true)
+ 3 APPPATH\Controllers\admin\TambahAdmin\BpdesController.php(36): view('admin/bpdes/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\TambahAdmin\BpdesController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\TambahAdmin\BpdesController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+DEBUG - 2025-08-14 06:29:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 06:29:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 06:29:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-08-14 06:29:27 --> ErrorException: Undefined variable $kecamatan
+[Method: GET, Route: admin/bpd/adminbpdes/create]
+in APPPATH\Views\admin\bpd\tampilan\pengurus\create.php on line 27.
+ 1 APPPATH\Views\admin\bpd\tampilan\pengurus\create.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $kecamatan', 'C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\app\\Views\\admin\\bpd\\tampilan\\pengurus\\create.php', 27)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\app\\Views\\admin\\bpd\\tampilan\\pengurus\\create.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/bpd/tampilan/pengurus/create', [], true)
+ 5 APPPATH\Controllers\admin\TambahAdmin\BpdesController.php(45): view('admin/bpd/tampilan/pengurus/create', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\TambahAdmin\BpdesController->create()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\TambahAdmin\BpdesController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+DEBUG - 2025-08-14 06:29:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-08-14 06:29:53 --> ErrorException: Undefined variable $kecamatan
+[Method: GET, Route: admin/bpd/adminbpdes/create]
+in APPPATH\Views\admin\bpd\tampilan\pengurus\create.php on line 27.
+ 1 APPPATH\Views\admin\bpd\tampilan\pengurus\create.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $kecamatan', 'C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\app\\Views\\admin\\bpd\\tampilan\\pengurus\\create.php', 27)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\app\\Views\\admin\\bpd\\tampilan\\pengurus\\create.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/bpd/tampilan/pengurus/create', [], true)
+ 5 APPPATH\Controllers\admin\TambahAdmin\BpdesController.php(45): view('admin/bpd/tampilan/pengurus/create', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\TambahAdmin\BpdesController->create()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\TambahAdmin\BpdesController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+DEBUG - 2025-08-14 06:37:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 06:37:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 06:37:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 06:37:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-08-14 06:37:25 --> mysqli_sql_exception: Unknown column 'kec.nama' in 'field list' in C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `tb_bpde...', 0)
+#1 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_bpde...')
+#2 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_bpde...')
+#3 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_bpde...', Array, false)
+#4 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\app\Controllers\admin\TambahAdmin\BpdesController.php(36): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(933): App\Controllers\admin\TambahAdmin\BpdesController->index()
+#8 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\admin\TambahAdmin\BpdesController))
+#9 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\rewrite.php(44): require_once('C:\\Users\\USER\\D...')
+#14 {main}
+CRITICAL - 2025-08-14 06:37:25 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'kec.nama' in 'field list'
+[Method: GET, Route: admin/bpd/adminbpdes]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_bpdes`.*, `kec`.`nama` AS `nama_kecamatan`, `desa`.`nama` AS `nama_desa`
+FROM `tb_bpdes`
+JOIN `tb_desa_kelurahan` AS `desa` ON `desa`.`id_desa` = `tb_bpdes`.`id_desa`
+JOIN `tb_kecamatan` AS `kec` ON `kec`.`id_kecamatan` = `desa`.`id_kecamatan`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\admin\TambahAdmin\BpdesController.php(36): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\admin\TambahAdmin\BpdesController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\admin\TambahAdmin\BpdesController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+CRITICAL - 2025-08-14 06:37:25 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'kec.nama' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_bpdes`.*, `kec`.`nama` AS `nama_kecamatan`, `desa`.`nama` AS `nama_desa`
+FROM `tb_bpdes`
+JOIN `tb_desa_kelurahan` AS `desa` ON `desa`.`id_desa` = `tb_bpdes`.`id_desa`
+JOIN `tb_kecamatan` AS `kec` ON `kec`.`id_kecamatan` = `desa`.`id_kecamatan`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_bpdes`.*, `kec`.`nama` AS `nama_kecamatan`, `desa`.`nama` AS `nama_desa`
+FROM `tb_bpdes`
+JOIN `tb_desa_kelurahan` AS `desa` ON `desa`.`id_desa` = `tb_bpdes`.`id_desa`
+JOIN `tb_kecamatan` AS `kec` ON `kec`.`id_kecamatan` = `desa`.`id_kecamatan`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_bpdes`.*, `kec`.`nama` AS `nama_kecamatan`, `desa`.`nama` AS `nama_desa`
+FROM `tb_bpdes`
+JOIN `tb_desa_kelurahan` AS `desa` ON `desa`.`id_desa` = `tb_bpdes`.`id_desa`
+JOIN `tb_kecamatan` AS `kec` ON `kec`.`id_kecamatan` = `desa`.`id_kecamatan`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\admin\TambahAdmin\BpdesController.php(36): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\admin\TambahAdmin\BpdesController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\admin\TambahAdmin\BpdesController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+CRITICAL - 2025-08-14 06:37:25 --> [Caused by] mysqli_sql_exception: Unknown column 'kec.nama' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `tb_bpdes`.*, `kec`.`nama` AS `nama_kecamatan`, `desa`.`nama` AS `nama_desa`
+FROM `tb_bpdes`
+JOIN `tb_desa_kelurahan` AS `desa` ON `desa`.`id_desa` = `tb_bpdes`.`id_desa`
+JOIN `tb_kecamatan` AS `kec` ON `kec`.`id_kecamatan` = `desa`.`id_kecamatan`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_bpdes`.*, `kec`.`nama` AS `nama_kecamatan`, `desa`.`nama` AS `nama_desa`
+FROM `tb_bpdes`
+JOIN `tb_desa_kelurahan` AS `desa` ON `desa`.`id_desa` = `tb_bpdes`.`id_desa`
+JOIN `tb_kecamatan` AS `kec` ON `kec`.`id_kecamatan` = `desa`.`id_kecamatan`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_bpdes`.*, `kec`.`nama` AS `nama_kecamatan`, `desa`.`nama` AS `nama_desa`
+FROM `tb_bpdes`
+JOIN `tb_desa_kelurahan` AS `desa` ON `desa`.`id_desa` = `tb_bpdes`.`id_desa`
+JOIN `tb_kecamatan` AS `kec` ON `kec`.`id_kecamatan` = `desa`.`id_kecamatan`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_bpdes`.*, `kec`.`nama` AS `nama_kecamatan`, `desa`.`nama` AS `nama_desa`
+FROM `tb_bpdes`
+JOIN `tb_desa_kelurahan` AS `desa` ON `desa`.`id_desa` = `tb_bpdes`.`id_desa`
+JOIN `tb_kecamatan` AS `kec` ON `kec`.`id_kecamatan` = `desa`.`id_kecamatan`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\admin\TambahAdmin\BpdesController.php(36): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\admin\TambahAdmin\BpdesController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\admin\TambahAdmin\BpdesController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+DEBUG - 2025-08-14 06:37:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-08-14 06:37:54 --> mysqli_sql_exception: Unknown column 'desa.nama' in 'field list' in C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `tb_bpde...', 0)
+#1 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_bpde...')
+#2 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_bpde...')
+#3 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_bpde...', Array, false)
+#4 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\app\Controllers\admin\TambahAdmin\BpdesController.php(36): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(933): App\Controllers\admin\TambahAdmin\BpdesController->index()
+#8 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\admin\TambahAdmin\BpdesController))
+#9 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\rewrite.php(44): require_once('C:\\Users\\USER\\D...')
+#14 {main}
+CRITICAL - 2025-08-14 06:37:54 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'desa.nama' in 'field list'
+[Method: GET, Route: admin/bpd/adminbpdes]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_bpdes`.*, `kec`.`nama_kecamatan` AS `nama_kecamatan`, `desa`.`nama` AS `nama_desa`
+FROM `tb_bpdes`
+JOIN `tb_desa_kelurahan` AS `desa` ON `desa`.`id_desa` = `tb_bpdes`.`id_desa`
+JOIN `tb_kecamatan` AS `kec` ON `kec`.`id_kecamatan` = `desa`.`id_kecamatan`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\admin\TambahAdmin\BpdesController.php(36): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\admin\TambahAdmin\BpdesController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\admin\TambahAdmin\BpdesController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+CRITICAL - 2025-08-14 06:37:54 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'desa.nama' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_bpdes`.*, `kec`.`nama_kecamatan` AS `nama_kecamatan`, `desa`.`nama` AS `nama_desa`
+FROM `tb_bpdes`
+JOIN `tb_desa_kelurahan` AS `desa` ON `desa`.`id_desa` = `tb_bpdes`.`id_desa`
+JOIN `tb_kecamatan` AS `kec` ON `kec`.`id_kecamatan` = `desa`.`id_kecamatan`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_bpdes`.*, `kec`.`nama_kecamatan` AS `nama_kecamatan`, `desa`.`nama` AS `nama_desa`
+FROM `tb_bpdes`
+JOIN `tb_desa_kelurahan` AS `desa` ON `desa`.`id_desa` = `tb_bpdes`.`id_desa`
+JOIN `tb_kecamatan` AS `kec` ON `kec`.`id_kecamatan` = `desa`.`id_kecamatan`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_bpdes`.*, `kec`.`nama_kecamatan` AS `nama_kecamatan`, `desa`.`nama` AS `nama_desa`
+FROM `tb_bpdes`
+JOIN `tb_desa_kelurahan` AS `desa` ON `desa`.`id_desa` = `tb_bpdes`.`id_desa`
+JOIN `tb_kecamatan` AS `kec` ON `kec`.`id_kecamatan` = `desa`.`id_kecamatan`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\admin\TambahAdmin\BpdesController.php(36): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\admin\TambahAdmin\BpdesController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\admin\TambahAdmin\BpdesController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+CRITICAL - 2025-08-14 06:37:54 --> [Caused by] mysqli_sql_exception: Unknown column 'desa.nama' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `tb_bpdes`.*, `kec`.`nama_kecamatan` AS `nama_kecamatan`, `desa`.`nama` AS `nama_desa`
+FROM `tb_bpdes`
+JOIN `tb_desa_kelurahan` AS `desa` ON `desa`.`id_desa` = `tb_bpdes`.`id_desa`
+JOIN `tb_kecamatan` AS `kec` ON `kec`.`id_kecamatan` = `desa`.`id_kecamatan`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_bpdes`.*, `kec`.`nama_kecamatan` AS `nama_kecamatan`, `desa`.`nama` AS `nama_desa`
+FROM `tb_bpdes`
+JOIN `tb_desa_kelurahan` AS `desa` ON `desa`.`id_desa` = `tb_bpdes`.`id_desa`
+JOIN `tb_kecamatan` AS `kec` ON `kec`.`id_kecamatan` = `desa`.`id_kecamatan`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_bpdes`.*, `kec`.`nama_kecamatan` AS `nama_kecamatan`, `desa`.`nama` AS `nama_desa`
+FROM `tb_bpdes`
+JOIN `tb_desa_kelurahan` AS `desa` ON `desa`.`id_desa` = `tb_bpdes`.`id_desa`
+JOIN `tb_kecamatan` AS `kec` ON `kec`.`id_kecamatan` = `desa`.`id_kecamatan`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_bpdes`.*, `kec`.`nama_kecamatan` AS `nama_kecamatan`, `desa`.`nama` AS `nama_desa`
+FROM `tb_bpdes`
+JOIN `tb_desa_kelurahan` AS `desa` ON `desa`.`id_desa` = `tb_bpdes`.`id_desa`
+JOIN `tb_kecamatan` AS `kec` ON `kec`.`id_kecamatan` = `desa`.`id_kecamatan`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\admin\TambahAdmin\BpdesController.php(36): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\admin\TambahAdmin\BpdesController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\admin\TambahAdmin\BpdesController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+DEBUG - 2025-08-14 06:38:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-08-14 06:38:15 --> mysqli_sql_exception: Unknown column 'desa.nama' in 'field list' in C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `tb_bpde...', 0)
+#1 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_bpde...')
+#2 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_bpde...')
+#3 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_bpde...', Array, false)
+#4 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\app\Controllers\admin\TambahAdmin\BpdesController.php(36): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(933): App\Controllers\admin\TambahAdmin\BpdesController->index()
+#8 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\admin\TambahAdmin\BpdesController))
+#9 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\rewrite.php(44): require_once('C:\\Users\\USER\\D...')
+#14 {main}
+CRITICAL - 2025-08-14 06:38:15 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'desa.nama' in 'field list'
+[Method: GET, Route: admin/bpd/adminbpdes]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_bpdes`.*, `kec`.`nama_kecamatan` AS `nama_kecamatan`, `desa`.`nama` AS `nama_desa`
+FROM `tb_bpdes`
+JOIN `tb_desa_kelurahan` AS `desa` ON `desa`.`id_desa` = `tb_bpdes`.`id_desa`
+JOIN `tb_kecamatan` AS `kec` ON `kec`.`id_kecamatan` = `desa`.`id_kecamatan`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\admin\TambahAdmin\BpdesController.php(36): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\admin\TambahAdmin\BpdesController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\admin\TambahAdmin\BpdesController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+CRITICAL - 2025-08-14 06:38:15 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'desa.nama' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_bpdes`.*, `kec`.`nama_kecamatan` AS `nama_kecamatan`, `desa`.`nama` AS `nama_desa`
+FROM `tb_bpdes`
+JOIN `tb_desa_kelurahan` AS `desa` ON `desa`.`id_desa` = `tb_bpdes`.`id_desa`
+JOIN `tb_kecamatan` AS `kec` ON `kec`.`id_kecamatan` = `desa`.`id_kecamatan`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_bpdes`.*, `kec`.`nama_kecamatan` AS `nama_kecamatan`, `desa`.`nama` AS `nama_desa`
+FROM `tb_bpdes`
+JOIN `tb_desa_kelurahan` AS `desa` ON `desa`.`id_desa` = `tb_bpdes`.`id_desa`
+JOIN `tb_kecamatan` AS `kec` ON `kec`.`id_kecamatan` = `desa`.`id_kecamatan`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_bpdes`.*, `kec`.`nama_kecamatan` AS `nama_kecamatan`, `desa`.`nama` AS `nama_desa`
+FROM `tb_bpdes`
+JOIN `tb_desa_kelurahan` AS `desa` ON `desa`.`id_desa` = `tb_bpdes`.`id_desa`
+JOIN `tb_kecamatan` AS `kec` ON `kec`.`id_kecamatan` = `desa`.`id_kecamatan`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\admin\TambahAdmin\BpdesController.php(36): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\admin\TambahAdmin\BpdesController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\admin\TambahAdmin\BpdesController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+CRITICAL - 2025-08-14 06:38:15 --> [Caused by] mysqli_sql_exception: Unknown column 'desa.nama' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `tb_bpdes`.*, `kec`.`nama_kecamatan` AS `nama_kecamatan`, `desa`.`nama` AS `nama_desa`
+FROM `tb_bpdes`
+JOIN `tb_desa_kelurahan` AS `desa` ON `desa`.`id_desa` = `tb_bpdes`.`id_desa`
+JOIN `tb_kecamatan` AS `kec` ON `kec`.`id_kecamatan` = `desa`.`id_kecamatan`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_bpdes`.*, `kec`.`nama_kecamatan` AS `nama_kecamatan`, `desa`.`nama` AS `nama_desa`
+FROM `tb_bpdes`
+JOIN `tb_desa_kelurahan` AS `desa` ON `desa`.`id_desa` = `tb_bpdes`.`id_desa`
+JOIN `tb_kecamatan` AS `kec` ON `kec`.`id_kecamatan` = `desa`.`id_kecamatan`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_bpdes`.*, `kec`.`nama_kecamatan` AS `nama_kecamatan`, `desa`.`nama` AS `nama_desa`
+FROM `tb_bpdes`
+JOIN `tb_desa_kelurahan` AS `desa` ON `desa`.`id_desa` = `tb_bpdes`.`id_desa`
+JOIN `tb_kecamatan` AS `kec` ON `kec`.`id_kecamatan` = `desa`.`id_kecamatan`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_bpdes`.*, `kec`.`nama_kecamatan` AS `nama_kecamatan`, `desa`.`nama` AS `nama_desa`
+FROM `tb_bpdes`
+JOIN `tb_desa_kelurahan` AS `desa` ON `desa`.`id_desa` = `tb_bpdes`.`id_desa`
+JOIN `tb_kecamatan` AS `kec` ON `kec`.`id_kecamatan` = `desa`.`id_kecamatan`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\admin\TambahAdmin\BpdesController.php(36): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\admin\TambahAdmin\BpdesController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\admin\TambahAdmin\BpdesController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+DEBUG - 2025-08-14 06:38:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 06:38:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-08-14 06:38:31 --> ErrorException: Undefined array key "nama"
+[Method: GET, Route: admin/bpd/adminbpdes/create]
+in APPPATH\Views\admin\bpd\tampilan\pengurus\create.php on line 27.
+ 1 APPPATH\Views\admin\bpd\tampilan\pengurus\create.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama"', 'C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\app\\Views\\admin\\bpd\\tampilan\\pengurus\\create.php', 27)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\app\\Views\\admin\\bpd\\tampilan\\pengurus\\create.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/bpd/tampilan/pengurus/create', [], true)
+ 5 APPPATH\Controllers\admin\TambahAdmin\BpdesController.php(55): view('admin/bpd/tampilan/pengurus/create', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\admin\TambahAdmin\BpdesController->create()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\admin\TambahAdmin\BpdesController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+WARNING - 2025-08-14 06:39:35 --> [DEPRECATED] Creation of dynamic property App\Controllers\admin\TambahAdmin\BpdesController::$BpdesModel is deprecated in APPPATH\Controllers\admin\TambahAdmin\BpdesController.php on line 18.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\admin\TambahAdmin\BpdesController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+DEBUG - 2025-08-14 06:39:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-08-14 06:39:35 --> ErrorException: Undefined array key "nama"
+[Method: GET, Route: admin/bpd/adminbpdes/create]
+in APPPATH\Views\admin\bpd\tampilan\pengurus\create.php on line 27.
+ 1 APPPATH\Views\admin\bpd\tampilan\pengurus\create.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama"', 'C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\app\\Views\\admin\\bpd\\tampilan\\pengurus\\create.php', 27)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\app\\Views\\admin\\bpd\\tampilan\\pengurus\\create.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/bpd/tampilan/pengurus/create', [], true)
+ 5 APPPATH\Controllers\admin\TambahAdmin\BpdesController.php(55): view('admin/bpd/tampilan/pengurus/create', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\admin\TambahAdmin\BpdesController->create()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\admin\TambahAdmin\BpdesController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+WARNING - 2025-08-14 06:40:15 --> [DEPRECATED] Creation of dynamic property App\Controllers\admin\TambahAdmin\BpdesController::$BpdesModel is deprecated in APPPATH\Controllers\admin\TambahAdmin\BpdesController.php on line 18.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\admin\TambahAdmin\BpdesController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+DEBUG - 2025-08-14 06:40:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 06:41:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 06:50:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 06:52:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 06:52:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 06:52:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 06:52:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 06:52:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-08-14 06:52:40 --> ErrorException: Undefined array key "nama"
+[Method: GET, Route: admin/bpd/adminbpdes/edit/2]
+in APPPATH\Views\admin\bpd\tampilan\pengurus\edit.php on line 24.
+ 1 APPPATH\Views\admin\bpd\tampilan\pengurus\edit.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama"', 'C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\app\\Views\\admin\\bpd\\tampilan\\pengurus\\edit.php', 24)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\app\\Views\\admin\\bpd\\tampilan\\pengurus\\edit.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/bpd/tampilan/pengurus/edit', [], true)
+ 5 APPPATH\Controllers\admin\TambahAdmin\BpdesController.php(113): view('admin/bpd/tampilan/pengurus/edit', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\admin\TambahAdmin\BpdesController->edit('2')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\admin\TambahAdmin\BpdesController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+DEBUG - 2025-08-14 06:52:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-08-14 06:52:48 --> ErrorException: Undefined array key "nama"
+[Method: GET, Route: admin/bpd/adminbpdes/edit/2]
+in APPPATH\Views\admin\bpd\tampilan\pengurus\edit.php on line 24.
+ 1 APPPATH\Views\admin\bpd\tampilan\pengurus\edit.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama"', 'C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\app\\Views\\admin\\bpd\\tampilan\\pengurus\\edit.php', 24)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\app\\Views\\admin\\bpd\\tampilan\\pengurus\\edit.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/bpd/tampilan/pengurus/edit', [], true)
+ 5 APPPATH\Controllers\admin\TambahAdmin\BpdesController.php(113): view('admin/bpd/tampilan/pengurus/edit', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\admin\TambahAdmin\BpdesController->edit('2')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\admin\TambahAdmin\BpdesController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+DEBUG - 2025-08-14 06:52:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-08-14 06:52:50 --> ErrorException: Undefined array key "nama"
+[Method: GET, Route: admin/bpd/adminbpdes/edit/2]
+in APPPATH\Views\admin\bpd\tampilan\pengurus\edit.php on line 24.
+ 1 APPPATH\Views\admin\bpd\tampilan\pengurus\edit.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama"', 'C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\app\\Views\\admin\\bpd\\tampilan\\pengurus\\edit.php', 24)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\app\\Views\\admin\\bpd\\tampilan\\pengurus\\edit.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/bpd/tampilan/pengurus/edit', [], true)
+ 5 APPPATH\Controllers\admin\TambahAdmin\BpdesController.php(113): view('admin/bpd/tampilan/pengurus/edit', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\admin\TambahAdmin\BpdesController->edit('2')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\admin\TambahAdmin\BpdesController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+DEBUG - 2025-08-14 06:53:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 06:53:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 06:53:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 06:53:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 06:53:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-08-14 06:53:25 --> mysqli_sql_exception: Unknown column 'prov.nama' in 'field list' in C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `tb_memb...', 0)
+#1 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_memb...')
+#2 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_memb...')
+#3 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_memb...', Array, false)
+#4 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\app\Controllers\admin\Bpdes.php(30): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(933): App\Controllers\Admin\Bpdes->index()
+#8 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Bpdes))
+#9 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\rewrite.php(44): require_once('C:\\Users\\USER\\D...')
+#14 {main}
+CRITICAL - 2025-08-14 06:53:25 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'prov.nama' in 'field list'
+[Method: GET, Route: admin/bpdes]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_members`.*, `prov`.`nama` as `nama_provinsi`, `kota`.`nama` as `nama_kota`, `kec`.`nama` as `nama_kecamatan`, `desa`.`nama` as `nama_desa`
+FROM `tb_members`
+LEFT JOIN `tb_provinsi` `prov` ON `prov`.`id_provinsi` = `tb_members`.`id_provinsi`
+LEFT JOIN `tb_kota_kabupaten` `kota` ON `kota`.`id_kota` = `tb_members`.`id_kota`
+LEFT JOIN `tb_kecamatan` `kec` ON `kec`.`id_kecamatan` = `tb_members`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` `desa` ON `desa`.`id_desa` = `tb_members`.`id_desa`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\admin\Bpdes.php(30): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Bpdes->index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Bpdes))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+CRITICAL - 2025-08-14 06:53:25 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'prov.nama' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_members`.*, `prov`.`nama` as `nama_provinsi`, `kota`.`nama` as `nama_kota`, `kec`.`nama` as `nama_kecamatan`, `desa`.`nama` as `nama_desa`
+FROM `tb_members`
+LEFT JOIN `tb_provinsi` `prov` ON `prov`.`id_provinsi` = `tb_members`.`id_provinsi`
+LEFT JOIN `tb_kota_kabupaten` `kota` ON `kota`.`id_kota` = `tb_members`.`id_kota`
+LEFT JOIN `tb_kecamatan` `kec` ON `kec`.`id_kecamatan` = `tb_members`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` `desa` ON `desa`.`id_desa` = `tb_members`.`id_desa`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_members`.*, `prov`.`nama` as `nama_provinsi`, `kota`.`nama` as `nama_kota`, `kec`.`nama` as `nama_kecamatan`, `desa`.`nama` as `nama_desa`
+FROM `tb_members`
+LEFT JOIN `tb_provinsi` `prov` ON `prov`.`id_provinsi` = `tb_members`.`id_provinsi`
+LEFT JOIN `tb_kota_kabupaten` `kota` ON `kota`.`id_kota` = `tb_members`.`id_kota`
+LEFT JOIN `tb_kecamatan` `kec` ON `kec`.`id_kecamatan` = `tb_members`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` `desa` ON `desa`.`id_desa` = `tb_members`.`id_desa`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_members`.*, `prov`.`nama` as `nama_provinsi`, `kota`.`nama` as `nama_kota`, `kec`.`nama` as `nama_kecamatan`, `desa`.`nama` as `nama_desa`
+FROM `tb_members`
+LEFT JOIN `tb_provinsi` `prov` ON `prov`.`id_provinsi` = `tb_members`.`id_provinsi`
+LEFT JOIN `tb_kota_kabupaten` `kota` ON `kota`.`id_kota` = `tb_members`.`id_kota`
+LEFT JOIN `tb_kecamatan` `kec` ON `kec`.`id_kecamatan` = `tb_members`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` `desa` ON `desa`.`id_desa` = `tb_members`.`id_desa`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\admin\Bpdes.php(30): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Bpdes->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Bpdes))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+CRITICAL - 2025-08-14 06:53:25 --> [Caused by] mysqli_sql_exception: Unknown column 'prov.nama' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `tb_members`.*, `prov`.`nama` as `nama_provinsi`, `kota`.`nama` as `nama_kota`, `kec`.`nama` as `nama_kecamatan`, `desa`.`nama` as `nama_desa`
+FROM `tb_members`
+LEFT JOIN `tb_provinsi` `prov` ON `prov`.`id_provinsi` = `tb_members`.`id_provinsi`
+LEFT JOIN `tb_kota_kabupaten` `kota` ON `kota`.`id_kota` = `tb_members`.`id_kota`
+LEFT JOIN `tb_kecamatan` `kec` ON `kec`.`id_kecamatan` = `tb_members`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` `desa` ON `desa`.`id_desa` = `tb_members`.`id_desa`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_members`.*, `prov`.`nama` as `nama_provinsi`, `kota`.`nama` as `nama_kota`, `kec`.`nama` as `nama_kecamatan`, `desa`.`nama` as `nama_desa`
+FROM `tb_members`
+LEFT JOIN `tb_provinsi` `prov` ON `prov`.`id_provinsi` = `tb_members`.`id_provinsi`
+LEFT JOIN `tb_kota_kabupaten` `kota` ON `kota`.`id_kota` = `tb_members`.`id_kota`
+LEFT JOIN `tb_kecamatan` `kec` ON `kec`.`id_kecamatan` = `tb_members`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` `desa` ON `desa`.`id_desa` = `tb_members`.`id_desa`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_members`.*, `prov`.`nama` as `nama_provinsi`, `kota`.`nama` as `nama_kota`, `kec`.`nama` as `nama_kecamatan`, `desa`.`nama` as `nama_desa`
+FROM `tb_members`
+LEFT JOIN `tb_provinsi` `prov` ON `prov`.`id_provinsi` = `tb_members`.`id_provinsi`
+LEFT JOIN `tb_kota_kabupaten` `kota` ON `kota`.`id_kota` = `tb_members`.`id_kota`
+LEFT JOIN `tb_kecamatan` `kec` ON `kec`.`id_kecamatan` = `tb_members`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` `desa` ON `desa`.`id_desa` = `tb_members`.`id_desa`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_members`.*, `prov`.`nama` as `nama_provinsi`, `kota`.`nama` as `nama_kota`, `kec`.`nama` as `nama_kecamatan`, `desa`.`nama` as `nama_desa`
+FROM `tb_members`
+LEFT JOIN `tb_provinsi` `prov` ON `prov`.`id_provinsi` = `tb_members`.`id_provinsi`
+LEFT JOIN `tb_kota_kabupaten` `kota` ON `kota`.`id_kota` = `tb_members`.`id_kota`
+LEFT JOIN `tb_kecamatan` `kec` ON `kec`.`id_kecamatan` = `tb_members`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` `desa` ON `desa`.`id_desa` = `tb_members`.`id_desa`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\admin\Bpdes.php(30): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Bpdes->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Bpdes))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+DEBUG - 2025-08-14 06:53:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 06:53:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 06:53:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 06:53:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 06:53:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 06:53:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 06:53:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 06:53:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-08-14 06:53:53 --> mysqli_sql_exception: Unknown column 'prov.nama' in 'field list' in C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `tb_memb...', 0)
+#1 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_memb...')
+#2 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_memb...')
+#3 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_memb...', Array, false)
+#4 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\app\Controllers\admin\Bpdes.php(30): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(933): App\Controllers\Admin\Bpdes->index()
+#8 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Bpdes))
+#9 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\rewrite.php(44): require_once('C:\\Users\\USER\\D...')
+#14 {main}
+CRITICAL - 2025-08-14 06:53:53 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'prov.nama' in 'field list'
+[Method: GET, Route: admin/bpdes]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_members`.*, `prov`.`nama` as `nama_provinsi`, `kota`.`nama` as `nama_kota`, `kec`.`nama` as `nama_kecamatan`, `desa`.`nama` as `nama_desa`
+FROM `tb_members`
+LEFT JOIN `tb_provinsi` `prov` ON `prov`.`id_provinsi` = `tb_members`.`id_provinsi`
+LEFT JOIN `tb_kota_kabupaten` `kota` ON `kota`.`id_kota` = `tb_members`.`id_kota`
+LEFT JOIN `tb_kecamatan` `kec` ON `kec`.`id_kecamatan` = `tb_members`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` `desa` ON `desa`.`id_desa` = `tb_members`.`id_desa`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\admin\Bpdes.php(30): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Bpdes->index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Bpdes))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+CRITICAL - 2025-08-14 06:53:53 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'prov.nama' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_members`.*, `prov`.`nama` as `nama_provinsi`, `kota`.`nama` as `nama_kota`, `kec`.`nama` as `nama_kecamatan`, `desa`.`nama` as `nama_desa`
+FROM `tb_members`
+LEFT JOIN `tb_provinsi` `prov` ON `prov`.`id_provinsi` = `tb_members`.`id_provinsi`
+LEFT JOIN `tb_kota_kabupaten` `kota` ON `kota`.`id_kota` = `tb_members`.`id_kota`
+LEFT JOIN `tb_kecamatan` `kec` ON `kec`.`id_kecamatan` = `tb_members`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` `desa` ON `desa`.`id_desa` = `tb_members`.`id_desa`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_members`.*, `prov`.`nama` as `nama_provinsi`, `kota`.`nama` as `nama_kota`, `kec`.`nama` as `nama_kecamatan`, `desa`.`nama` as `nama_desa`
+FROM `tb_members`
+LEFT JOIN `tb_provinsi` `prov` ON `prov`.`id_provinsi` = `tb_members`.`id_provinsi`
+LEFT JOIN `tb_kota_kabupaten` `kota` ON `kota`.`id_kota` = `tb_members`.`id_kota`
+LEFT JOIN `tb_kecamatan` `kec` ON `kec`.`id_kecamatan` = `tb_members`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` `desa` ON `desa`.`id_desa` = `tb_members`.`id_desa`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_members`.*, `prov`.`nama` as `nama_provinsi`, `kota`.`nama` as `nama_kota`, `kec`.`nama` as `nama_kecamatan`, `desa`.`nama` as `nama_desa`
+FROM `tb_members`
+LEFT JOIN `tb_provinsi` `prov` ON `prov`.`id_provinsi` = `tb_members`.`id_provinsi`
+LEFT JOIN `tb_kota_kabupaten` `kota` ON `kota`.`id_kota` = `tb_members`.`id_kota`
+LEFT JOIN `tb_kecamatan` `kec` ON `kec`.`id_kecamatan` = `tb_members`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` `desa` ON `desa`.`id_desa` = `tb_members`.`id_desa`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\admin\Bpdes.php(30): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Bpdes->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Bpdes))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+CRITICAL - 2025-08-14 06:53:53 --> [Caused by] mysqli_sql_exception: Unknown column 'prov.nama' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `tb_members`.*, `prov`.`nama` as `nama_provinsi`, `kota`.`nama` as `nama_kota`, `kec`.`nama` as `nama_kecamatan`, `desa`.`nama` as `nama_desa`
+FROM `tb_members`
+LEFT JOIN `tb_provinsi` `prov` ON `prov`.`id_provinsi` = `tb_members`.`id_provinsi`
+LEFT JOIN `tb_kota_kabupaten` `kota` ON `kota`.`id_kota` = `tb_members`.`id_kota`
+LEFT JOIN `tb_kecamatan` `kec` ON `kec`.`id_kecamatan` = `tb_members`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` `desa` ON `desa`.`id_desa` = `tb_members`.`id_desa`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_members`.*, `prov`.`nama` as `nama_provinsi`, `kota`.`nama` as `nama_kota`, `kec`.`nama` as `nama_kecamatan`, `desa`.`nama` as `nama_desa`
+FROM `tb_members`
+LEFT JOIN `tb_provinsi` `prov` ON `prov`.`id_provinsi` = `tb_members`.`id_provinsi`
+LEFT JOIN `tb_kota_kabupaten` `kota` ON `kota`.`id_kota` = `tb_members`.`id_kota`
+LEFT JOIN `tb_kecamatan` `kec` ON `kec`.`id_kecamatan` = `tb_members`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` `desa` ON `desa`.`id_desa` = `tb_members`.`id_desa`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_members`.*, `prov`.`nama` as `nama_provinsi`, `kota`.`nama` as `nama_kota`, `kec`.`nama` as `nama_kecamatan`, `desa`.`nama` as `nama_desa`
+FROM `tb_members`
+LEFT JOIN `tb_provinsi` `prov` ON `prov`.`id_provinsi` = `tb_members`.`id_provinsi`
+LEFT JOIN `tb_kota_kabupaten` `kota` ON `kota`.`id_kota` = `tb_members`.`id_kota`
+LEFT JOIN `tb_kecamatan` `kec` ON `kec`.`id_kecamatan` = `tb_members`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` `desa` ON `desa`.`id_desa` = `tb_members`.`id_desa`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_members`.*, `prov`.`nama` as `nama_provinsi`, `kota`.`nama` as `nama_kota`, `kec`.`nama` as `nama_kecamatan`, `desa`.`nama` as `nama_desa`
+FROM `tb_members`
+LEFT JOIN `tb_provinsi` `prov` ON `prov`.`id_provinsi` = `tb_members`.`id_provinsi`
+LEFT JOIN `tb_kota_kabupaten` `kota` ON `kota`.`id_kota` = `tb_members`.`id_kota`
+LEFT JOIN `tb_kecamatan` `kec` ON `kec`.`id_kecamatan` = `tb_members`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` `desa` ON `desa`.`id_desa` = `tb_members`.`id_desa`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\admin\Bpdes.php(30): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Bpdes->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Bpdes))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+DEBUG - 2025-08-14 07:19:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 07:19:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 07:19:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 07:22:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 07:22:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 07:22:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 07:22:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 07:23:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 07:23:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 07:23:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 07:23:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 07:24:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 07:24:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 07:25:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 07:25:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 07:25:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 07:25:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 07:25:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 07:25:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-08-14 07:26:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-08-14 07:26:00 --> mysqli_sql_exception: Unknown column 'prov.nama' in 'field list' in C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `tb_memb...', 0)
+#1 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_memb...')
+#2 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_memb...')
+#3 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_memb...', Array, false)
+#4 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\app\Controllers\admin\Bpdes.php(30): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(933): App\Controllers\Admin\Bpdes->index()
+#8 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Bpdes))
+#9 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\USER\Documents\Elecomp Indonesia\GESID\gesid_portal (2)\GESID 13_08\GESID\system\rewrite.php(44): require_once('C:\\Users\\USER\\D...')
+#14 {main}
+CRITICAL - 2025-08-14 07:26:00 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'prov.nama' in 'field list'
+[Method: GET, Route: admin/bpdes]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_members`.*, `prov`.`nama` as `nama_provinsi`, `kota`.`nama` as `nama_kota`, `kec`.`nama` as `nama_kecamatan`, `desa`.`nama` as `nama_desa`
+FROM `tb_members`
+LEFT JOIN `tb_provinsi` `prov` ON `prov`.`id_provinsi` = `tb_members`.`id_provinsi`
+LEFT JOIN `tb_kota_kabupaten` `kota` ON `kota`.`id_kota` = `tb_members`.`id_kota`
+LEFT JOIN `tb_kecamatan` `kec` ON `kec`.`id_kecamatan` = `tb_members`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` `desa` ON `desa`.`id_desa` = `tb_members`.`id_desa`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\admin\Bpdes.php(30): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Bpdes->index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Bpdes))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+CRITICAL - 2025-08-14 07:26:00 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'prov.nama' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_members`.*, `prov`.`nama` as `nama_provinsi`, `kota`.`nama` as `nama_kota`, `kec`.`nama` as `nama_kecamatan`, `desa`.`nama` as `nama_desa`
+FROM `tb_members`
+LEFT JOIN `tb_provinsi` `prov` ON `prov`.`id_provinsi` = `tb_members`.`id_provinsi`
+LEFT JOIN `tb_kota_kabupaten` `kota` ON `kota`.`id_kota` = `tb_members`.`id_kota`
+LEFT JOIN `tb_kecamatan` `kec` ON `kec`.`id_kecamatan` = `tb_members`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` `desa` ON `desa`.`id_desa` = `tb_members`.`id_desa`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_members`.*, `prov`.`nama` as `nama_provinsi`, `kota`.`nama` as `nama_kota`, `kec`.`nama` as `nama_kecamatan`, `desa`.`nama` as `nama_desa`
+FROM `tb_members`
+LEFT JOIN `tb_provinsi` `prov` ON `prov`.`id_provinsi` = `tb_members`.`id_provinsi`
+LEFT JOIN `tb_kota_kabupaten` `kota` ON `kota`.`id_kota` = `tb_members`.`id_kota`
+LEFT JOIN `tb_kecamatan` `kec` ON `kec`.`id_kecamatan` = `tb_members`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` `desa` ON `desa`.`id_desa` = `tb_members`.`id_desa`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_members`.*, `prov`.`nama` as `nama_provinsi`, `kota`.`nama` as `nama_kota`, `kec`.`nama` as `nama_kecamatan`, `desa`.`nama` as `nama_desa`
+FROM `tb_members`
+LEFT JOIN `tb_provinsi` `prov` ON `prov`.`id_provinsi` = `tb_members`.`id_provinsi`
+LEFT JOIN `tb_kota_kabupaten` `kota` ON `kota`.`id_kota` = `tb_members`.`id_kota`
+LEFT JOIN `tb_kecamatan` `kec` ON `kec`.`id_kecamatan` = `tb_members`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` `desa` ON `desa`.`id_desa` = `tb_members`.`id_desa`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\admin\Bpdes.php(30): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Bpdes->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Bpdes))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+CRITICAL - 2025-08-14 07:26:00 --> [Caused by] mysqli_sql_exception: Unknown column 'prov.nama' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `tb_members`.*, `prov`.`nama` as `nama_provinsi`, `kota`.`nama` as `nama_kota`, `kec`.`nama` as `nama_kecamatan`, `desa`.`nama` as `nama_desa`
+FROM `tb_members`
+LEFT JOIN `tb_provinsi` `prov` ON `prov`.`id_provinsi` = `tb_members`.`id_provinsi`
+LEFT JOIN `tb_kota_kabupaten` `kota` ON `kota`.`id_kota` = `tb_members`.`id_kota`
+LEFT JOIN `tb_kecamatan` `kec` ON `kec`.`id_kecamatan` = `tb_members`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` `desa` ON `desa`.`id_desa` = `tb_members`.`id_desa`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_members`.*, `prov`.`nama` as `nama_provinsi`, `kota`.`nama` as `nama_kota`, `kec`.`nama` as `nama_kecamatan`, `desa`.`nama` as `nama_desa`
+FROM `tb_members`
+LEFT JOIN `tb_provinsi` `prov` ON `prov`.`id_provinsi` = `tb_members`.`id_provinsi`
+LEFT JOIN `tb_kota_kabupaten` `kota` ON `kota`.`id_kota` = `tb_members`.`id_kota`
+LEFT JOIN `tb_kecamatan` `kec` ON `kec`.`id_kecamatan` = `tb_members`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` `desa` ON `desa`.`id_desa` = `tb_members`.`id_desa`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_members`.*, `prov`.`nama` as `nama_provinsi`, `kota`.`nama` as `nama_kota`, `kec`.`nama` as `nama_kecamatan`, `desa`.`nama` as `nama_desa`
+FROM `tb_members`
+LEFT JOIN `tb_provinsi` `prov` ON `prov`.`id_provinsi` = `tb_members`.`id_provinsi`
+LEFT JOIN `tb_kota_kabupaten` `kota` ON `kota`.`id_kota` = `tb_members`.`id_kota`
+LEFT JOIN `tb_kecamatan` `kec` ON `kec`.`id_kecamatan` = `tb_members`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` `desa` ON `desa`.`id_desa` = `tb_members`.`id_desa`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tb_members`.*, `prov`.`nama` as `nama_provinsi`, `kota`.`nama` as `nama_kota`, `kec`.`nama` as `nama_kecamatan`, `desa`.`nama` as `nama_desa`
+FROM `tb_members`
+LEFT JOIN `tb_provinsi` `prov` ON `prov`.`id_provinsi` = `tb_members`.`id_provinsi`
+LEFT JOIN `tb_kota_kabupaten` `kota` ON `kota`.`id_kota` = `tb_members`.`id_kota`
+LEFT JOIN `tb_kecamatan` `kec` ON `kec`.`id_kecamatan` = `tb_members`.`id_kecamatan`
+LEFT JOIN `tb_desa_kelurahan` `desa` ON `desa`.`id_desa` = `tb_members`.`id_desa`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\admin\Bpdes.php(30): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Bpdes->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Bpdes))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
+CRITICAL - 2025-08-14 08:43:55 --> ErrorException: Undefined array key "nama"
+[Method: GET, Route: formulir-pendaftaran]
+in APPPATH\Views\pages\formulir-pendaftaran.php on line 40.
+ 1 APPPATH\Views\pages\formulir-pendaftaran.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama"', 'C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\app\\Views\\pages\\formulir-pendaftaran.php', 40)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\app\\Views\\pages\\formulir-pendaftaran.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('pages/formulir-pendaftaran', [], true)
+ 5 APPPATH\Controllers\Register.php(17): view('pages/formulir-pendaftaran', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Register->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Register))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\USER\\Documents\\Elecomp Indonesia\\GESID\\gesid_portal (2)\\GESID 13_08\\GESID\\public\\index.php')
