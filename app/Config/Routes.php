@@ -151,7 +151,10 @@ $routes->group('admin/superadmin', ['namespace' => 'App\Controllers\admin'], fun
 $routes->group('admin/superadmin', ['namespace' => 'App\Controllers'], function ($routes) {
     $routes->get('verifikasi-artikel', 'VerifikasiArtikel::index');
     $routes->get('verifikasi-artikel/approve/(:num)', 'VerifikasiArtikel::approve/$1');
-    $routes->get('verifikasi-artikel/reject/(:num)', 'VerifikasiArtikelw::reject/$1');
+    $routes->get('verifikasi-artikel/reject/(:num)', 'VerifikasiArtikel::reject/$1');
+    $routes->get('verifikasi-acara', 'VerifikasiAcara::index');
+    $routes->get('verifikasi-acara/approve/(:num)', 'VerifikasiAcara::approve/$1');
+    $routes->get('verifikasi-acara/reject/(:num)', 'VerifikasiAcara::reject/$1');
 });
 
 
@@ -178,7 +181,12 @@ $routes->group('admin/bpn', ['namespace' => 'App\Controllers\admin'], function (
     $routes->get('edit-artikel/(:num)', 'Bpn::editArtikel/$1');
     $routes->post('update-artikel/(:num)', 'Bpn::updateArtikel/$1');
     $routes->post('delete-artikel/(:num)', 'Bpn::deleteArtikel/$1');
+    $routes->get('acara', 'Bpn::indexAcara');
     $routes->get('buat-acara', 'Bpn::buatAcara');
+    $routes->post('simpan-acara', 'Bpn::simpanAcara');
+    $routes->get('edit-acara/(:num)', 'Bpn::editAcara/$1');
+    $routes->post('update-acara/(:num)', 'Bpn::updateAcara/$1');
+    $routes->post('delete-acara/(:num)', 'Bpn::deleteAcara/$1');
     // $routes->get('aduan', 'Bpn::listAduan');
     // $routes->get('admin/adminbpn', 'Bpn::listAduan');
 
@@ -211,7 +219,12 @@ $routes->group('admin/bpd', ['namespace' => 'App\Controllers\admin'], function (
     $routes->get('edit-artikel/(:num)', 'Bpd::editArtikel/$1');
     $routes->post('update-artikel/(:num)', 'Bpd::updateArtikel/$1');
     $routes->post('delete-artikel/(:num)', 'Bpd::deleteArtikel/$1');
+    $routes->get('acara', 'Bpd::indexAcara');
     $routes->get('buat-acara', 'Bpd::buatAcara');
+    $routes->post('simpan-acara', 'Bpd::simpanAcara');
+    $routes->get('edit-acara/(:num)', 'Bpd::editAcara/$1');
+    $routes->post('update-acara/(:num)', 'Bpd::updateAcara/$1');
+    $routes->post('delete-acara/(:num)', 'Bpd::deleteAcara/$1');
 });
 
 $routes->group('admin/bpd', ['namespace' => 'App\Controllers\admin\TambahAdmin'], function ($routes) {
@@ -239,10 +252,12 @@ $routes->group('admin/bpw', ['namespace' => 'App\Controllers\admin'], function (
     $routes->get('edit-artikel/(:num)', 'Bpw::editArtikel/$1');
     $routes->post('update-artikel/(:num)', 'Bpw::updateArtikel/$1');
     $routes->post('delete-artikel/(:num)', 'Bpw::deleteArtikel/$1');
+    $routes->get('acara', 'Bpw::indexAcara');
     $routes->get('buat-acara', 'Bpw::buatAcara');
-    // $routes->get('aduan', 'Admin\Bpw::listAduan');
-    // $routes->get('verifikasi-member', 'Admin\Bpw::verifikasiMember');
-
+    $routes->post('simpan-acara', 'Bpw::simpanAcara');
+    $routes->get('edit-acara/(:num)', 'Bpw::editAcara/$1');
+    $routes->post('update-acara/(:num)', 'Bpw::updateAcara/$1');
+    $routes->post('delete-acara/(:num)', 'Bpw::deleteAcara/$1');
 });
 
 $routes->group('admin/bpw', ['namespace' => 'App\Controllers\admin\TambahAdmin'], function ($routes) {
@@ -271,7 +286,12 @@ $routes->group('admin/bpdes', ['namespace' => 'App\Controllers\admin'], function
     $routes->get('edit-artikel/(:num)', 'Bpdes::editArtikel/$1');
     $routes->post('update-artikel/(:num)', 'Bpdes::updateArtikel/$1');
     $routes->post('delete-artikel/(:num)', 'Bpdes::deleteArtikel/$1');
+    $routes->get('acara', 'Bpdes::indexAcara');
     $routes->get('buat-acara', 'Bpdes::buatAcara');
+    $routes->post('simpan-acara', 'Bpdes::simpanAcara');
+    $routes->get('edit-acara/(:num)', 'Bpdes::editAcara/$1');
+    $routes->post('update-acara/(:num)', 'Bpdes::updateAcara/$1');
+    $routes->post('delete-acara/(:num)', 'Bpdes::deleteAcara/$1');
 
 
 });

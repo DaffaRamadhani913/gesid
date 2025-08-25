@@ -5,7 +5,7 @@ return [
     ['url' => 'admin/bpn/data-member', 'icon' => 'mdi:alert-outline', 'label' => 'Data Member'],
     ['url' => 'admin/bpn/verifikasi-member', 'icon' => 'mdi:account-check-outline', 'label' => 'Verifikasi Member'],
     ['url' => 'admin/bpn/artikel', 'icon' => 'mdi:account-check-outline', 'label' => 'Buat Artikel'],
-    ['url' => 'admin/bpn/buat-acara', 'icon' => 'mdi:account-check-outline', 'label' => 'Buat Acara'],
+    ['url' => 'admin/bpn/acara', 'icon' => 'mdi:account-check-outline', 'label' => 'Buat Acara'],
     ['url' => 'admin//bpn/adminbpw', 'icon' => 'mdi:account-tie-outline', 'label' => 'Admin BPW'],
   ],
   'bpd' => [
@@ -13,7 +13,7 @@ return [
     ['url' => 'admin/bpd/data-member', 'icon' => 'mdi:alert-outline', 'label' => 'Data Member'],
     ['url' => 'admin/bpd/aduan', 'icon' => 'mdi:alert-outline', 'label' => 'Aduan'],
     ['url' => 'admin/bpd/artikel', 'icon' => 'mdi:account-check-outline', 'label' => 'Buat Artikel'],
-    ['url' => 'admin/bpd/buat-acara', 'icon' => 'mdi:account-check-outline', 'label' => 'Buat Acara'],
+    ['url' => 'admin/bpd/acara', 'icon' => 'mdi:account-check-outline', 'label' => 'Buat Acara'],
     ['url' => 'admin//bpd/adminbpdes', 'icon' => 'mdi:account-tie-outline', 'label' => 'Admin BPDes'],
   ],
 
@@ -22,7 +22,7 @@ return [
     ['url' => 'admin/bpdes/data-member', 'icon' => 'mdi:view-dashboard-outline', 'label' => 'Data Member'],
     ['url' => 'admin/bpdes/aduan', 'icon' => 'mdi:alert-outline', 'label' => 'Aduan'],
     ['url' => 'admin/bpdes/artikel', 'icon' => 'mdi:account-check-outline', 'label' => 'Buat Artikel'],
-    ['url' => 'admin/bpdes/buat-acara', 'icon' => 'mdi:account-check-outline', 'label' => 'Buat Acara'],
+    ['url' => 'admin/bpdes/acara', 'icon' => 'mdi:account-check-outline', 'label' => 'Buat Acara'],
   ],
 
 
@@ -30,7 +30,7 @@ return [
     ['url' => 'admin/bpw', 'icon' => 'mdi:view-dashboard-outline', 'label' => 'Dashboard'],
     ['url' => 'admin/bpw/data-member', 'icon' => 'mdi:alert-outline', 'label' => 'Data Member'],
     ['url' => 'admin/bpw/artikel', 'icon' => 'mdi:account-check-outline', 'label' => 'Buat Artikel'],
-    ['url' => 'admin/bpw/buat-acara', 'icon' => 'mdi:account-check-outline', 'label' => 'Buat Acara'],
+    ['url' => 'admin/bpw/acara', 'icon' => 'mdi:account-check-outline', 'label' => 'Buat Acara'],
     ['url' => 'admin//bpw/adminbpd', 'icon' => 'mdi:account-tie-outline', 'label' => 'Admin BPD'],
   ],
   'superadmin' => [

@@ -6,6 +6,7 @@ use App\Controllers\BaseController;
 use App\Models\MemberModel;
 use App\Models\ProvinsiModel;
 use App\Models\ArtikelModel;
+use App\Models\AcaraModel;
 
 class Bpw extends BaseController
 {
@@ -13,11 +14,13 @@ class Bpw extends BaseController
     protected $provinsiModel;
     protected $artikelModel;
 
+    protected $acaraModel;
     public function __construct()
     {
         $this->memberModel = new MemberModel();
         $this->provinsiModel = new ProvinsiModel();
         $this->artikelModel = new ArtikelModel();
+        $this->acaraModel = new AcaraModel();
     }
 
     public function index()
@@ -201,5 +204,105 @@ class Bpw extends BaseController
             default:
                 return 'BPW';
         }
+    }
+
+    public function indexAcara()
+{
+    $provinsi = $this->provinsiModel->find(session()->get('id_provinsi'));
+    $provinsiNama = $provinsi['nama_provinsi'] ?? 'BPW';
+
+    $acaras = $this->acaraModel
+        ->where('created_label', $provinsiNama)
+        ->orderBy('created_at', 'DESC')
+        ->findAll();
+
+    return view('admin/bpw/acara/index', ['acaras' => $acaras]);
+}
+
+    // Form tambah acara
+    public function buatAcara()
+    {
+        return view('admin/bpw/acara/create');
+    }
+
+    // Simpan acara baru
+    public function simpanAcara()
+    {
+        $file = $this->request->getFile('gambar');
+        if ($file && $file->isValid() && !$file->hasMoved()) {
+            $filename = $file->getRandomName();
+            $file->move('uploads/events', $filename);
+        } else {
+            $filename = null;
+        }
+
+        $this->acaraModel->save([
+            'judul' => $this->request->getPost('judul'),
+            'deskripsi' => $this->request->getPost('deskripsi'),
+            'gambar' => $filename,
+            'created_by' => session()->get('user_id'),
+            'created_label' => $this->resolvePublisherLabel(), // ✅ Add this line
+            'status' => 'pending'
+        ]);
+
+        return redirect()->to('/admin/bpw/acara')->with('success', 'Acara berhasil dibuat dan menunggu approval.');
+    }
+    // Form edit acara
+    public function editAcara($id)
+    {
+        $acara = $this->acaraModel->find($id);
+
+        if (!$acara || $acara['created_by'] != session()->get('user_id')) {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Acara tidak ditemukan');
+        }
+
+        return view('admin/bpw/acara/edit', ['acara' => $acara]);
+    }
+
+    // Update acara
+    public function updateAcara($id)
+    {
+        $acara = $this->acaraModel->find($id);
+
+        if (!$acara || $acara['created_by'] != session()->get('user_id')) {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Acara tidak ditemukan');
+        }
+
+        $file = $this->request->getFile('gambar');
+        if ($file && $file->isValid() && !$file->hasMoved()) {
+            $filename = $file->getRandomName();
+            $file->move('uploads/events', $filename);
+            if (file_exists('uploads/events/' . $acara['gambar'])) {
+                unlink('uploads/events/' . $acara['gambar']);
+            }
+        } else {
+            $filename = $acara['gambar'];
+        }
+
+        $this->acaraModel->update($id, [
+            'judul' => $this->request->getPost('judul'),
+            'deskripsi' => $this->request->getPost('deskripsi'),
+            'gambar' => $filename,
+            'status' => 'pending' // reset ke pending saat diupdate
+        ]);
+
+        return redirect()->to('/admin/bpw/acara')->with('success', 'Acara berhasil diperbarui dan menunggu approval.');
+    }
+
+    // Hapus acara
+    public function deleteAcara($id)
+    {
+        $acara = $this->acaraModel->find($id);
+
+        if (!$acara || $acara['created_by'] != session()->get('user_id')) {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Acara tidak ditemukan');
+        }
+
+        if (file_exists('uploads/events/' . $acara['gambar'])) {
+            unlink('uploads/events/' . $acara['gambar']);
+        }
+
+        $this->acaraModel->delete($id);
+        return redirect()->to('/admin/bpw/acara')->with('success', 'Acara berhasil dihapus.');
     }
 }

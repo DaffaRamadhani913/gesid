@@ -8,6 +8,7 @@ use App\Models\AduanModel;
 use App\Models\ResponsModel;
 use App\Models\KotaModel;
 use App\Models\ArtikelModel;
+use App\Models\AcaraModel;
 
 class Bpd extends BaseController
 {
@@ -15,11 +16,15 @@ class Bpd extends BaseController
     protected $kotaModel;
     protected $artikelModel;
 
+    protected $acaraModel;
+
     public function __construct()
     {
-        $this->memberModel  = new MemberModel();
-        $this->kotaModel    = new KotaModel();
+        $this->memberModel = new MemberModel();
+        $this->kotaModel = new KotaModel();
         $this->artikelModel = new ArtikelModel();
+        $this->acaraModel = new AcaraModel();
+
     }
 
     public function index()
@@ -45,7 +50,7 @@ class Bpd extends BaseController
 
         return view('admin/bpd/members/list_view', [
             'members' => $members,
-            'kota'    => $kota,
+            'kota' => $kota,
         ]);
     }
 
@@ -61,7 +66,7 @@ class Bpd extends BaseController
     public function kirimRespons($id_aduan)
     {
         $responsModel = new ResponsModel();
-        $aduanModel   = new AduanModel();
+        $aduanModel = new AduanModel();
 
         $lampiranFile = $this->request->getFile('lampiran');
         $lampiranName = null;
@@ -73,8 +78,8 @@ class Bpd extends BaseController
 
         $responsModel->save([
             'id_aduan' => $id_aduan,
-            'judul'    => $this->request->getPost('judul'),
-            'isi'      => $this->request->getPost('isi'),
+            'judul' => $this->request->getPost('judul'),
+            'isi' => $this->request->getPost('isi'),
             'lampiran' => $lampiranName
         ]);
 
@@ -85,19 +90,19 @@ class Bpd extends BaseController
 
     // ================== ARTIKEL ==================
     public function indexArtikel()
-{
-    $data['title'] = 'Kelola Artikel';
+    {
+        $data['title'] = 'Kelola Artikel';
 
-    // ✅ Use the same resolvePublisherLabel() logic for filtering
-    $publisherLabel = $this->resolvePublisherLabel();
+        // ✅ Use the same resolvePublisherLabel() logic for filtering
+        $publisherLabel = $this->resolvePublisherLabel();
 
-    $data['artikels'] = $this->artikelModel
-        ->where('created_label', $publisherLabel)
-        ->orderBy('tanggal_publikasi', 'DESC')
-        ->findAll();
+        $data['artikels'] = $this->artikelModel
+            ->where('created_label', $publisherLabel)
+            ->orderBy('tanggal_publikasi', 'DESC')
+            ->findAll();
 
-    return view('admin/bpd/artikel/index', $data);
-}
+        return view('admin/bpd/artikel/index', $data);
+    }
 
     public function buatArtikel()
     {
@@ -112,7 +117,7 @@ class Bpd extends BaseController
 
         if (
             !$this->validate([
-                'judul'  => 'required|min_length[3]',
+                'judul' => 'required|min_length[3]',
                 'konten' => 'required',
                 'gambar' => 'is_image[gambar]|max_size[gambar,100]',
             ])
@@ -130,34 +135,34 @@ class Bpd extends BaseController
         }
 
         $this->artikelModel->insert([
-            'judul'           => $this->request->getPost('judul'),
-            'konten'          => $this->request->getPost('konten'),
-            'gambar'          => $gambarPath,
+            'judul' => $this->request->getPost('judul'),
+            'konten' => $this->request->getPost('konten'),
+            'gambar' => $gambarPath,
             'tanggal_publikasi' => date('Y-m-d H:i:s'),
-            'kategori'        => $this->request->getPost('kategori'),
-            'status'          => 'pending',
-            'created_by'      => session()->get('user_id'),
-            'created_label'   => $this->resolvePublisherLabel(),
+            'kategori' => $this->request->getPost('kategori'),
+            'status' => 'pending',
+            'created_by' => session()->get('user_id'),
+            'created_label' => $this->resolvePublisherLabel(),
         ]);
 
         return redirect()->to('/admin/bpd/artikel')->with('success', 'Artikel berhasil diupload!');
     }
 
     public function deleteArtikel($id)
-{
-    $artikel = $this->artikelModel->find($id);
+    {
+        $artikel = $this->artikelModel->find($id);
 
-    if ($artikel) {
-        // ✅ Use absolute path (FCPATH) for safety
-        if (!empty($artikel['gambar']) && file_exists(FCPATH . $artikel['gambar'])) {
-            unlink(FCPATH . $artikel['gambar']);
+        if ($artikel) {
+            // ✅ Use absolute path (FCPATH) for safety
+            if (!empty($artikel['gambar']) && file_exists(FCPATH . $artikel['gambar'])) {
+                unlink(FCPATH . $artikel['gambar']);
+            }
+
+            $this->artikelModel->delete($id);
         }
 
-        $this->artikelModel->delete($id);
+        return redirect()->to('/admin/bpd/artikel')->with('success', 'Artikel berhasil dihapus');
     }
-
-    return redirect()->to('/admin/bpd/artikel')->with('success', 'Artikel berhasil dihapus');
-}
 
     public function editArtikel($id)
     {
@@ -180,10 +185,10 @@ class Bpd extends BaseController
 
         if (
             !$this->validate([
-                'judul'   => 'required|min_length[3]',
-                'konten'  => 'required',
-                'kategori'=> 'required',
-                'gambar'  => 'if_exist|is_image[gambar]|max_size[gambar,100]',
+                'judul' => 'required|min_length[3]',
+                'konten' => 'required',
+                'kategori' => 'required',
+                'gambar' => 'if_exist|is_image[gambar]|max_size[gambar,100]',
             ])
         ) {
             return redirect()->back()->withInput()->with('errors', $validation->getErrors());
@@ -202,10 +207,10 @@ class Bpd extends BaseController
         }
 
         $this->artikelModel->update($id, [
-            'judul'    => $this->request->getPost('judul'),
+            'judul' => $this->request->getPost('judul'),
             'kategori' => $this->request->getPost('kategori'),
-            'konten'   => $this->request->getPost('konten'),
-            'gambar'   => $gambarPath
+            'konten' => $this->request->getPost('konten'),
+            'gambar' => $gambarPath
         ]);
 
         return redirect()->to('/admin/bpd/artikel')->with('success', 'Artikel berhasil diperbarui!');
@@ -214,7 +219,8 @@ class Bpd extends BaseController
     // =============== HELPERS ==================
     private function lookup(string $table, string $pk, $id, string $col): ?string
     {
-        if (empty($id)) return null;
+        if (empty($id))
+            return null;
         $db = \Config\Database::connect();
         $row = $db->table($table)->select($col)->where($pk, $id)->get()->getRowArray();
         return $row[$col] ?? null;
@@ -240,5 +246,105 @@ class Bpd extends BaseController
             default:
                 return 'BPD';
         }
+    }
+
+    public function indexAcara()
+    {
+        $publisherLabel = $this->resolvePublisherLabel(); // e.g., Kota name for BPD
+
+        $acaras = $this->acaraModel
+            ->where('created_label', $publisherLabel)
+            ->orderBy('created_at', 'DESC')
+            ->findAll();
+
+        return view('admin/bpd/acara/index', ['acaras' => $acaras]);
+    }
+
+
+    // Form tambah acara
+    public function buatAcara()
+    {
+        return view('admin/bpd/acara/create');
+    }
+
+    // Simpan acara baru
+    public function simpanAcara()
+    {
+        $file = $this->request->getFile('gambar');
+        if ($file && $file->isValid() && !$file->hasMoved()) {
+            $filename = $file->getRandomName();
+            $file->move('uploads/events', $filename);
+        } else {
+            $filename = null;
+        }
+
+        $this->acaraModel->save([
+            'judul' => $this->request->getPost('judul'),
+            'deskripsi' => $this->request->getPost('deskripsi'),
+            'gambar' => $filename,
+            'created_by' => session()->get('user_id'),
+            'created_label' => $this->resolvePublisherLabel(), // ✅ Add this line
+            'status' => 'pending'
+        ]);
+
+        return redirect()->to('/admin/bpd/acara')->with('success', 'Acara berhasil dibuat dan menunggu approval.');
+    }
+    // Form edit acara
+    public function editAcara($id)
+    {
+        $acara = $this->acaraModel->find($id);
+
+        if (!$acara || $acara['created_by'] != session()->get('user_id')) {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Acara tidak ditemukan');
+        }
+
+        return view('admin/bpd/acara/edit', ['acara' => $acara]);
+    }
+
+    // Update acara
+    public function updateAcara($id)
+    {
+        $acara = $this->acaraModel->find($id);
+
+        if (!$acara || $acara['created_by'] != session()->get('user_id')) {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Acara tidak ditemukan');
+        }
+
+        $file = $this->request->getFile('gambar');
+        if ($file && $file->isValid() && !$file->hasMoved()) {
+            $filename = $file->getRandomName();
+            $file->move('uploads/events', $filename);
+            if (file_exists('uploads/events/' . $acara['gambar'])) {
+                unlink('uploads/events/' . $acara['gambar']);
+            }
+        } else {
+            $filename = $acara['gambar'];
+        }
+
+        $this->acaraModel->update($id, [
+            'judul' => $this->request->getPost('judul'),
+            'deskripsi' => $this->request->getPost('deskripsi'),
+            'gambar' => $filename,
+            'status' => 'pending' // reset ke pending saat diupdate
+        ]);
+
+        return redirect()->to('/admin/bpd/acara')->with('success', 'Acara berhasil diperbarui dan menunggu approval.');
+    }
+
+    // Hapus acara
+    public function deleteAcara($id)
+    {
+        $acara = $this->acaraModel->find($id);
+
+        if (!$acara || $acara['created_by'] != session()->get('user_id')) {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Acara tidak ditemukan');
+        }
+
+        if (file_exists('uploads/events/' . $acara['gambar'])) {
+            unlink('uploads/events/' . $acara['gambar']);
+        }
+
+        $this->acaraModel->delete($id);
+        return redirect()->to('/admin/bpd/acara')->with('success', 'Acara berhasil dihapus.');
     }
 }

@@ -17,17 +17,12 @@
         <div class="row justify-content-center">
 
             <?php
-            $events = [
-                ["festival-budaya.jpg", "Festival Budaya", "Perayaan budaya lokal dengan pertunjukan seni, musik tradisional, dan pameran kerajinan tangan warga."],
-                ["menanam-pohon.jpg", "Gerakan Menanam Pohon", "Aksi peduli lingkungan dengan penanaman pohon serentak oleh warga untuk menjaga kelestarian alam."],
-                ["pasar-rakyat.jpg", "Pasar Rakyat", "Pameran produk lokal, kuliner tradisional, dan hasil pertanian langsung dari warga."],
-                ["lomba-dayung.jpg", "Lomba Dayung", "Kompetisi perahu tradisional yang diikuti oleh warga untuk mempererat persaudaraan."],
-                ["pentas-musik.jpg", "Pentas Musik", "Pertunjukan musik dari band lokal dan seniman yang meriah dan menghibur."],
-                ["festival-panen.jpg", "Festival Panen", "Perayaan hasil panen dengan berbagai kegiatan budaya, kuliner, dan hiburan."],
-            ];
+            use App\Models\AcaraModel;
+
+            $acaraModel = new AcaraModel();
+            $events = $acaraModel->where('status', 'approved')->orderBy('created_at', 'DESC')->findAll();
 
             foreach ($events as $i => $e):
-                // delay bertahap 100ms antar card
                 $delay = $i * 100;
             ?>
                 <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="<?= $delay ?>">
@@ -37,14 +32,14 @@
                                 display: flex; flex-direction: column; height: 100%;">
 
                         <!-- Poster -->
-                        <img src="<?= base_url('uploads/events/' . $e[0]) ?>"
-                            alt="<?= $e[1] ?>"
+                        <img src="<?= base_url('uploads/events/' . $e['gambar']) ?>"
+                            alt="<?= $e['judul'] ?>"
                             style="width: 100%; aspect-ratio: 3/4; object-fit: cover;">
 
                         <!-- Caption -->
                         <div style="padding: 20px; text-align: center; flex-grow: 1;">
-                            <h5 style="font-weight: 700; font-size: 1.3rem; margin-bottom: 10px; color: white;"><?= $e[1] ?></h5>
-                            <p style="font-size: 1rem; color: #ddd; line-height: 1.5;"><?= $e[2] ?></p>
+                            <h5 style="font-weight: 700; font-size: 1.3rem; margin-bottom: 10px; color: white;"><?= $e['judul'] ?></h5>
+                            <p style="font-size: 1rem; color: #ddd; line-height: 1.5;"><?= $e['deskripsi'] ?></p>
                         </div>
 
                     </div>

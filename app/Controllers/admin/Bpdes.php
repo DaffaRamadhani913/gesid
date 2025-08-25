@@ -7,18 +7,20 @@ use App\Models\MemberModel;
 use App\Models\AduanModel;
 use App\Models\ResponsModel;
 use App\Models\DesaModel;
-
+use App\Models\AcaraModel;
 class Bpdes extends BaseController
 {
     protected $memberModel;
     protected $desaModel;
     protected $artikelModel;
 
+    protected $acaraModel;
     public function __construct()
     {
         $this->memberModel = new MemberModel();
         $this->desaModel = new DesaModel();
-        $this->artikelModel = new \App\Models\ArtikelModel(); // pastikan model dibuat
+        $this->artikelModel = new \App\Models\ArtikelModel();
+        $this->acaraModel = new AcaraModel();
     }
 
     public function index()
@@ -29,7 +31,8 @@ class Bpdes extends BaseController
     public function dataMember()
     {
         $idDesa = session()->get('id_desa');
-        if (!$idDesa) return redirect()->to('/login')->with('error', 'Desa tidak ditemukan di session');
+        if (!$idDesa)
+            return redirect()->to('/login')->with('error', 'Desa tidak ditemukan di session');
 
         $desa = $this->desaModel->find($idDesa);
         $members = $this->memberModel
@@ -103,11 +106,13 @@ class Bpdes extends BaseController
 
     public function simpanArtikel()
     {
-        if (!$this->validate([
-            'judul' => 'required|min_length[3]',
-            'konten' => 'required',
-            'gambar' => 'is_image[gambar]|max_size[gambar,100]',
-        ])) {
+        if (
+            !$this->validate([
+                'judul' => 'required|min_length[3]',
+                'konten' => 'required',
+                'gambar' => 'is_image[gambar]|max_size[gambar,100]',
+            ])
+        ) {
             return redirect()->back()->withInput()->with('errors', \Config\Services::validation()->getErrors());
         }
 
@@ -136,21 +141,25 @@ class Bpdes extends BaseController
     public function editArtikel($id)
     {
         $artikel = $this->artikelModel->find($id);
-        if (!$artikel) return redirect()->to('/admin/bpdes/artikel')->with('error', 'Artikel tidak ditemukan.');
+        if (!$artikel)
+            return redirect()->to('/admin/bpdes/artikel')->with('error', 'Artikel tidak ditemukan.');
         return view('admin/bpdes/artikel/edit', compact('artikel'));
     }
 
     public function updateArtikel($id)
     {
         $artikel = $this->artikelModel->find($id);
-        if (!$artikel) return redirect()->to('/admin/bpdes/artikel')->with('error', 'Artikel tidak ditemukan.');
+        if (!$artikel)
+            return redirect()->to('/admin/bpdes/artikel')->with('error', 'Artikel tidak ditemukan.');
 
-        if (!$this->validate([
-            'judul' => 'required|min_length[3]',
-            'konten' => 'required',
-            'kategori' => 'required',
-            'gambar' => 'if_exist|is_image[gambar]|max_size[gambar,100]',
-        ])) {
+        if (
+            !$this->validate([
+                'judul' => 'required|min_length[3]',
+                'konten' => 'required',
+                'kategori' => 'required',
+                'gambar' => 'if_exist|is_image[gambar]|max_size[gambar,100]',
+            ])
+        ) {
             return redirect()->back()->withInput()->with('errors', \Config\Services::validation()->getErrors());
         }
 
@@ -188,7 +197,8 @@ class Bpdes extends BaseController
     // ================== HELPERS ==================
     private function lookup(string $table, string $pk, $id, string $col): ?string
     {
-        if (empty($id)) return null;
+        if (empty($id))
+            return null;
         $db = \Config\Database::connect();
         $row = $db->table($table)->select($col)->where($pk, $id)->get()->getRowArray();
         return $row[$col] ?? null;
@@ -207,5 +217,109 @@ class Bpdes extends BaseController
             default:
                 return 'BPDes';
         }
+    }
+
+public function indexAcara()
+{
+    // Get publisher label (desa name for BPDes)
+    $publisherLabel = $this->resolvePublisherLabel();
+
+    // Fetch acara for this desa only
+    $acaras = $this->acaraModel
+        ->where('created_label', $publisherLabel)
+        ->orderBy('created_at', 'DESC')
+        ->findAll();
+
+    // Return BPDes-specific view
+    return view('admin/bpdes/acara/index', ['acaras' => $acaras]);
+}
+
+
+
+    // Form tambah acara
+    public function buatAcara()
+    {
+        return view('admin/bpdes/acara/create');
+    }
+
+    // Simpan acara baru
+    public function simpanAcara()
+    {
+        $file = $this->request->getFile('gambar');
+        if ($file && $file->isValid() && !$file->hasMoved()) {
+            $filename = $file->getRandomName();
+            $file->move('uploads/events', $filename);
+        } else {
+            $filename = null;
+        }
+
+        $this->acaraModel->save([
+            'judul' => $this->request->getPost('judul'),
+            'deskripsi' => $this->request->getPost('deskripsi'),
+            'gambar' => $filename,
+            'created_by' => session()->get('user_id'),
+            'created_label' => $this->resolvePublisherLabel(), // ✅ Add this line
+            'status' => 'pending'
+        ]);
+
+        return redirect()->to('/admin/bpdes/acara')->with('success', 'Acara berhasil dibuat dan menunggu approval.');
+    }
+    // Form edit acara
+    public function editAcara($id)
+    {
+        $acara = $this->acaraModel->find($id);
+
+        if (!$acara || $acara['created_by'] != session()->get('user_id')) {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Acara tidak ditemukan');
+        }
+
+        return view('admin/bpdes/acara/edit', ['acara' => $acara]);
+    }
+
+    // Update acara
+    public function updateAcara($id)
+    {
+        $acara = $this->acaraModel->find($id);
+
+        if (!$acara || $acara['created_by'] != session()->get('user_id')) {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Acara tidak ditemukan');
+        }
+
+        $file = $this->request->getFile('gambar');
+        if ($file && $file->isValid() && !$file->hasMoved()) {
+            $filename = $file->getRandomName();
+            $file->move('uploads/events', $filename);
+            if (file_exists('uploads/events/' . $acara['gambar'])) {
+                unlink('uploads/events/' . $acara['gambar']);
+            }
+        } else {
+            $filename = $acara['gambar'];
+        }
+
+        $this->acaraModel->update($id, [
+            'judul' => $this->request->getPost('judul'),
+            'deskripsi' => $this->request->getPost('deskripsi'),
+            'gambar' => $filename,
+            'status' => 'pending' // reset ke pending saat diupdate
+        ]);
+
+        return redirect()->to('/admin/bpdes/acara')->with('success', 'Acara berhasil diperbarui dan menunggu approval.');
+    }
+
+    // Hapus acara
+    public function deleteAcara($id)
+    {
+        $acara = $this->acaraModel->find($id);
+
+        if (!$acara || $acara['created_by'] != session()->get('user_id')) {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Acara tidak ditemukan');
+        }
+
+        if (file_exists('uploads/events/' . $acara['gambar'])) {
+            unlink('uploads/events/' . $acara['gambar']);
+        }
+
+        $this->acaraModel->delete($id);
+        return redirect()->to('/admin/bpdes/acara')->with('success', 'Acara berhasil dihapus.');
     }
 }
