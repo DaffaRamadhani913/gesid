@@ -3,14 +3,17 @@
 namespace App\Controllers;
 
 use App\Models\ArtikelModel;
+use App\Models\AcaraModel;
 
 class Home extends BaseController
 {
     protected $artikelModel;
+    protected $acaraModel;
 
     public function __construct()
     {
         $this->artikelModel = new ArtikelModel();
+        $this->acaraModel = new AcaraModel();
     }
 
     public function index()
@@ -21,9 +24,17 @@ class Home extends BaseController
             ->limit(4)
             ->findAll();
 
+        // Ambil 3 acara terbaru (untuk homepage)
+        $latestAcara = $this->acaraModel
+            ->where('status', 'approved') // optional, if you track approval
+            ->orderBy('created_at', 'DESC')
+            ->limit(3)
+            ->findAll();
+
         return view('pages/homepage', [
             'title' => 'Beranda - GESID',
-            'latestArticles' => $latestArticles
+            'latestArticles' => $latestArticles,
+            'acaras' => $latestAcara
         ]);
     }
 

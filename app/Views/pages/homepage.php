@@ -212,8 +212,7 @@
                 <div class="service-summary">
                     <p style="font-weight: 600;">
                         Dari panggung budaya, kegiatan sosial, hingga perayaan penuh warna — setiap event GESID
-                        dirancang
-                        untuk membangun kebersamaan, melestarikan tradisi, dan mendorong kreativitas.
+                        dirancang untuk membangun kebersamaan, melestarikan tradisi, dan mendorong kreativitas.
                         Mari bergabung dalam momen-momen berkesan yang tak hanya menghangatkan hati,
                         tetapi juga menggerakkan langkah menuju kemajuan bersama.
                     </p>
@@ -223,39 +222,35 @@
 
         <div class="container">
             <div class="row justify-content-center">
-                <?php
-                $events = [
-                    ["festival-budaya.jpg", "Festival Budaya", "Perayaan budaya lokal dengan pertunjukan seni, musik tradisional, dan pameran kerajinan tangan anggota GESID."],
-                    ["menanam-pohon.jpg", "Gerakan Menanam Pohon", "Aksi peduli lingkungan dengan penanaman pohon serentak oleh anggota GESID untuk menjaga kelestarian alam."],
-                    ["pasar-rakyat.jpg", "Pasar Rakyat", "Pameran produk lokal, kuliner tradisional, dan hasil pertanian dari anggota GESID."],
-                    ["lomba-dayung.jpg", "Lomba Dayung", "Kompetisi perahu tradisional yang diikuti oleh anggota GESID untuk mempererat persaudaraan."],
-                    ["pentas-musik.jpg", "Pentas Musik GESID", "Pertunjukan musik dari band lokal dan seniman GESID yang meriah dan menghibur."],
-                    ["festival-panen.jpg", "Festival Panen", "Perayaan hasil panen dengan berbagai kegiatan budaya, kuliner, dan hiburan bersama GESID."],
-                ];
+                <?php if (!empty($acaras)): ?>
+                    <?php foreach (array_slice($acaras, 0, 3) as $index => $acara): ?>
+                        <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="<?= 100 + ($index * 150) ?>">
+                            <div style="background: #0d1b24; border-radius: 12px; overflow: hidden; 
+                            border: 2px solid #ddd; 
+                            box-shadow: 0 4px 12px rgba(0,0,0,0.08); 
+                            display: flex; flex-direction: column; height: 100%;">
 
-                $events = array_slice($events, 0, 3);
+                                <!-- Poster -->
+                                <img src="<?= base_url('uploads/events/' . ($acara['gambar'] ?? 'default.jpg')) ?>"
+                                    alt="<?= $acara['judul'] ?>" style="width: 100%; aspect-ratio: 1/1; object-fit: cover;">
 
-                foreach ($events as $index => $e):
-                    ?>
-                    <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="<?= 100 + ($index * 150) ?>">
-                        <div style="background: #0d1b24; border-radius: 12px; overflow: hidden; 
-                        border: 2px solid #ddd; 
-                        box-shadow: 0 4px 12px rgba(0,0,0,0.08); 
-                        display: flex; flex-direction: column; height: 100%;">
-
-                            <!-- Poster -->
-                            <img src="<?= base_url('uploads/events/' . $e[0]) ?>" alt="<?= $e[1] ?>"
-                                style="width: 100%; aspect-ratio: 1/1; object-fit: cover;">
-
-                            <!-- Caption -->
-                            <div style="padding: 20px; text-align: center; flex-grow: 1;">
-                                <h5 style="font-weight: 700; font-size: 1.3rem; margin-bottom: 10px; color: white;">
-                                    <?= $e[1] ?></h5>
-                                <p style="font-size: 1rem; color: #ddd; line-height: 1.5;"><?= $e[2] ?></p>
+                                <!-- Caption -->
+                                <div style="padding: 20px; text-align: center; flex-grow: 1;">
+                                    <h5 style="font-weight: 700; font-size: 1.3rem; margin-bottom: 10px; color: white;">
+                                        <?= $acara['judul'] ?>
+                                    </h5>
+                                    <p style="font-size: 1rem; color: #ddd; line-height: 1.5;">
+                                        <?= substr(strip_tags($acara['deskripsi']), 0, 150) ?>...
+                                    </p>
+                                    <small
+                                        class="text-muted"><?= date('d F Y', strtotime($acara['created_at'] ?? date('Y-m-d'))) ?></small>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                <?php endforeach; ?>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <p class="text-center">Belum ada event tersedia.</p>
+                <?php endif; ?>
             </div>
 
             <!-- Tombol di bawah daftar event -->
@@ -268,7 +263,8 @@
             </div>
         </div>
     </section>
-    <!-- End Evant Section -->
+    <!-- End Event Section -->
+
 
 
     <!-- Member Section -->
