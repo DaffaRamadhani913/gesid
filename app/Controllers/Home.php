@@ -2,11 +2,29 @@
 
 namespace App\Controllers;
 
+use App\Models\ArtikelModel;
+
 class Home extends BaseController
 {
+    protected $artikelModel;
+
+    public function __construct()
+    {
+        $this->artikelModel = new ArtikelModel();
+    }
+
     public function index()
     {
-        return view('pages/homepage', ['title' => 'Beranda - GESID']);
+        // Ambil 4 artikel terbaru
+        $latestArticles = $this->artikelModel
+            ->orderBy('tanggal_publikasi', 'DESC')
+            ->limit(4)
+            ->findAll();
+
+        return view('pages/homepage', [
+            'title' => 'Beranda - GESID',
+            'latestArticles' => $latestArticles
+        ]);
     }
 
     public function about()
@@ -50,7 +68,6 @@ class Home extends BaseController
 
     public function detailKategori($kategori_id, $id)
     {
-        // Ambil data sesuai kategori
         $kategoriNama = $kategori_id == 1 ? 'Budaya Desa' : 'Kegiatan Desa';
 
         $artikel = [
@@ -67,11 +84,11 @@ class Home extends BaseController
     public function artikelDetail($id)
     {
         $artikel = [
-            'judul'    => "Kegiatan Desa $id",
-            'tanggal'  => '5 Agustus 2025',
+            'judul' => "Kegiatan Desa $id",
+            'tanggal' => '5 Agustus 2025',
             'kategori' => 'Umum',
-            'gambar'   => "assets/img/artikel/desa-$id.jpg",
-            'konten'   => "Deskripsi lengkap kegiatan desa $id."
+            'gambar' => "assets/img/artikel/desa-$id.jpg",
+            'konten' => "Deskripsi lengkap kegiatan desa $id."
         ];
 
         return view('pages/artikel-detail', compact('artikel'));

@@ -7,18 +7,24 @@ use App\Models\MemberModel;
 use App\Models\AduanModel;
 use App\Models\ResponsModel;
 use App\Models\KotaModel;
+use App\Models\ArtikelModel;
 
 class Bpd extends BaseController
 {
     protected $memberModel;
     protected $kotaModel;
-
+    protected $artikelModel;
 
     public function __construct()
     {
-        $this->memberModel = new MemberModel();
-        $this->kotaModel = new KotaModel();
+        $this->memberModel  = new MemberModel();
+        $this->kotaModel    = new KotaModel();
+        $this->artikelModel = new ArtikelModel();
+    }
 
+    public function index()
+    {
+        return view('admin/bpd/dashboard_view');
     }
 
     public function dataMember()
@@ -29,10 +35,8 @@ class Bpd extends BaseController
             return redirect()->to('/login')->with('error', 'Kota tidak ditemukan di session');
         }
 
-        // Ambil nama kota berdasarkan session id_kota
         $kota = $this->kotaModel->find($idKota);
 
-        // Ambil member yang hanya dari kota ini
         $members = $this->memberModel
             ->select('tb_members.*, tb_kota_kabupaten.nama_kota AS nama_kota')
             ->join('tb_kota_kabupaten', 'tb_kota_kabupaten.id_kota = tb_members.id_kota', 'left')
@@ -41,32 +45,11 @@ class Bpd extends BaseController
 
         return view('admin/bpd/members/list_view', [
             'members' => $members,
-            'kota' => $kota,  // mirip $provinsi di BPW
+            'kota'    => $kota,
         ]);
     }
 
-    public function index()
-    {
-        return view('admin/bpd/dashboard_view');
-    }
-
-    // public function verifikasiMember()
-    // {
-    //     $members = $this->memberModel
-    //         ->select('tb_members.*, 
-    //                     prov.nama_provinsi as nama_provinsi, 
-    //                     kota.nama_kota as nama_kota, 
-    //                     kec.nama_kecamatan as nama_kecamatan, 
-    //                     desa.nama_desa as nama_desa')
-    //         ->join('tb_provinsi prov', 'prov.id_provinsi = tb_members.id_provinsi', 'left')
-    //         ->join('tb_kota_kabupaten kota', 'kota.id_kota = tb_members.id_kota', 'left')
-    //         ->join('tb_kecamatan kec', 'kec.id_kecamatan = tb_members.id_kecamatan', 'left')
-    //         ->join('tb_desa_kelurahan desa', 'desa.id_desa = tb_members.id_desa', 'left')
-    //         ->findAll();
-
-    //     return view('admin/bpd/verifikasi_member', ['members' => $members]);
-    // }
-
+    // ================== ADUAN ==================
     public function listAduan()
     {
         $aduanModel = new AduanModel();
@@ -78,9 +61,8 @@ class Bpd extends BaseController
     public function kirimRespons($id_aduan)
     {
         $responsModel = new ResponsModel();
-        $aduanModel = new AduanModel();
+        $aduanModel   = new AduanModel();
 
-        // Handle file upload if exists
         $lampiranFile = $this->request->getFile('lampiran');
         $lampiranName = null;
 
@@ -89,30 +71,174 @@ class Bpd extends BaseController
             $lampiranFile->move(FCPATH . 'uploads/lampiran', $lampiranName);
         }
 
-        // Save to tb_respons
         $responsModel->save([
             'id_aduan' => $id_aduan,
-            'judul' => $this->request->getPost('judul'),
-            'isi' => $this->request->getPost('isi'),
+            'judul'    => $this->request->getPost('judul'),
+            'isi'      => $this->request->getPost('isi'),
             'lampiran' => $lampiranName
         ]);
 
-        // Update aduan status
         $aduanModel->update($id_aduan, ['status' => 'Selesai']);
 
         return redirect()->back()->with('success', 'Aduan telah direspons');
     }
 
-    // public function kirimAduan()
-    // {
-    //     $aduanModel = new AduanModel();
+    // ================== ARTIKEL ==================
+    public function indexArtikel()
+{
+    $data['title'] = 'Kelola Artikel';
 
-    //     $aduanModel->save([
-    //         'judul' => $this->request->getPost('judul'),
-    //         'isi'   => $this->request->getPost('isi'),
-    //         'created_at' => date('Y-m-d H:i:s')
-    //     ]);
+    // ✅ Use the same resolvePublisherLabel() logic for filtering
+    $publisherLabel = $this->resolvePublisherLabel();
 
-    //     return redirect()->back()->with('success', 'Umpan balik berhasil dikirim.');
-    // }
+    $data['artikels'] = $this->artikelModel
+        ->where('created_label', $publisherLabel)
+        ->orderBy('tanggal_publikasi', 'DESC')
+        ->findAll();
+
+    return view('admin/bpd/artikel/index', $data);
+}
+
+    public function buatArtikel()
+    {
+        return view('admin/bpd/artikel/buat', [
+            'title' => 'Buat Artikel Baru'
+        ]);
+    }
+
+    public function simpanArtikel()
+    {
+        $validation = \Config\Services::validation();
+
+        if (
+            !$this->validate([
+                'judul'  => 'required|min_length[3]',
+                'konten' => 'required',
+                'gambar' => 'is_image[gambar]|max_size[gambar,100]',
+            ])
+        ) {
+            return redirect()->back()->withInput()->with('errors', $validation->getErrors());
+        }
+
+        $file = $this->request->getFile('gambar');
+        $gambarPath = null;
+
+        if ($file && $file->isValid() && !$file->hasMoved()) {
+            $newName = $file->getRandomName();
+            $file->move('uploads/artikel', $newName);
+            $gambarPath = 'uploads/artikel/' . $newName;
+        }
+
+        $this->artikelModel->insert([
+            'judul'           => $this->request->getPost('judul'),
+            'konten'          => $this->request->getPost('konten'),
+            'gambar'          => $gambarPath,
+            'tanggal_publikasi' => date('Y-m-d H:i:s'),
+            'kategori'        => $this->request->getPost('kategori'),
+            'status'          => 'pending',
+            'created_by'      => session()->get('user_id'),
+            'created_label'   => $this->resolvePublisherLabel(),
+        ]);
+
+        return redirect()->to('/admin/bpd/artikel')->with('success', 'Artikel berhasil diupload!');
+    }
+
+    public function deleteArtikel($id)
+{
+    $artikel = $this->artikelModel->find($id);
+
+    if ($artikel) {
+        // ✅ Use absolute path (FCPATH) for safety
+        if (!empty($artikel['gambar']) && file_exists(FCPATH . $artikel['gambar'])) {
+            unlink(FCPATH . $artikel['gambar']);
+        }
+
+        $this->artikelModel->delete($id);
+    }
+
+    return redirect()->to('/admin/bpd/artikel')->with('success', 'Artikel berhasil dihapus');
+}
+
+    public function editArtikel($id)
+    {
+        $data['artikel'] = $this->artikelModel->find($id);
+        if (!$data['artikel']) {
+            return redirect()->to('/admin/bpd')->with('error', 'Artikel tidak ditemukan.');
+        }
+        return view('admin/bpd/artikel/edit', $data);
+    }
+
+    public function updateArtikel($id)
+    {
+        $artikel = $this->artikelModel->find($id);
+
+        if (!$artikel) {
+            return redirect()->to('/admin/bpd/artikel')->with('error', 'Artikel tidak ditemukan.');
+        }
+
+        $validation = \Config\Services::validation();
+
+        if (
+            !$this->validate([
+                'judul'   => 'required|min_length[3]',
+                'konten'  => 'required',
+                'kategori'=> 'required',
+                'gambar'  => 'if_exist|is_image[gambar]|max_size[gambar,100]',
+            ])
+        ) {
+            return redirect()->back()->withInput()->with('errors', $validation->getErrors());
+        }
+
+        $gambar = $this->request->getFile('gambar');
+        $gambarPath = $artikel['gambar'];
+
+        if ($gambar && $gambar->isValid() && !$gambar->hasMoved()) {
+            if (!empty($artikel['gambar']) && file_exists($artikel['gambar'])) {
+                unlink($artikel['gambar']);
+            }
+            $newName = $gambar->getRandomName();
+            $gambar->move('uploads/artikel', $newName);
+            $gambarPath = 'uploads/artikel/' . $newName;
+        }
+
+        $this->artikelModel->update($id, [
+            'judul'    => $this->request->getPost('judul'),
+            'kategori' => $this->request->getPost('kategori'),
+            'konten'   => $this->request->getPost('konten'),
+            'gambar'   => $gambarPath
+        ]);
+
+        return redirect()->to('/admin/bpd/artikel')->with('success', 'Artikel berhasil diperbarui!');
+    }
+
+    // =============== HELPERS ==================
+    private function lookup(string $table, string $pk, $id, string $col): ?string
+    {
+        if (empty($id)) return null;
+        $db = \Config\Database::connect();
+        $row = $db->table($table)->select($col)->where($pk, $id)->get()->getRowArray();
+        return $row[$col] ?? null;
+    }
+
+    private function resolvePublisherLabel(): string
+    {
+        $role = strtolower((string) session()->get('role'));
+
+        switch ($role) {
+            case 'bpw': {
+                $name = $this->lookup('tb_provinsi', 'id_provinsi', session()->get('id_provinsi'), 'nama_provinsi');
+                return $name ?: 'BPW';
+            }
+            case 'bpd': {
+                $name = $this->lookup('tb_kota_kabupaten', 'id_kota', session()->get('id_kota'), 'nama_kota');
+                return $name ?: 'BPD';
+            }
+            case 'bpdes': {
+                $name = $this->lookup('tb_desa_kelurahan', 'id_desa', session()->get('id_desa'), 'nama_desa');
+                return $name ?: 'BPDes';
+            }
+            default:
+                return 'BPD';
+        }
+    }
 }

@@ -151,7 +151,7 @@ $routes->group('admin/superadmin', ['namespace' => 'App\Controllers\admin'], fun
 $routes->group('admin/superadmin', ['namespace' => 'App\Controllers'], function ($routes) {
     $routes->get('verifikasi-artikel', 'VerifikasiArtikel::index');
     $routes->get('verifikasi-artikel/approve/(:num)', 'VerifikasiArtikel::approve/$1');
-    $routes->get('verifikasi-artikel/reject/(:num)', 'VerifikasiArtikel::reject/$1');
+    $routes->get('verifikasi-artikel/reject/(:num)', 'VerifikasiArtikelw::reject/$1');
 });
 
 
@@ -205,7 +205,12 @@ $routes->group('admin/bpd', ['namespace' => 'App\Controllers\admin'], function (
     $routes->get('aduan', 'Bpd::listAduan');
     // $routes->post('aduan/kirim', 'Bpd::kirimAduan');
     $routes->post('kirimRespons/(:num)', 'Bpd::kirimRespons/$1');
+    $routes->get('artikel', 'Bpd::indexArtikel');
     $routes->get('buat-artikel', 'Bpd::buatArtikel');
+    $routes->post('simpan-artikel', 'Bpd::simpanArtikel');
+    $routes->get('edit-artikel/(:num)', 'Bpd::editArtikel/$1');
+    $routes->post('update-artikel/(:num)', 'Bpd::updateArtikel/$1');
+    $routes->post('delete-artikel/(:num)', 'Bpd::deleteArtikel/$1');
     $routes->get('buat-acara', 'Bpd::buatAcara');
 });
 
@@ -228,7 +233,12 @@ $routes->group('admin/bpd', ['namespace' => 'App\Controllers\admin\TambahAdmin']
 $routes->group('admin/bpw', ['namespace' => 'App\Controllers\admin'], function ($routes) {
     $routes->get('/', 'Bpw::index');
     $routes->get('data-member', 'Bpw::dataMember');
+    $routes->get('artikel', 'Bpw::indexArtikel');
     $routes->get('buat-artikel', 'Bpw::buatArtikel');
+    $routes->post('simpan-artikel', 'Bpw::simpanArtikel');
+    $routes->get('edit-artikel/(:num)', 'Bpw::editArtikel/$1');
+    $routes->post('update-artikel/(:num)', 'Bpw::updateArtikel/$1');
+    $routes->post('delete-artikel/(:num)', 'Bpw::deleteArtikel/$1');
     $routes->get('buat-acara', 'Bpw::buatAcara');
     // $routes->get('aduan', 'Admin\Bpw::listAduan');
     // $routes->get('verifikasi-member', 'Admin\Bpw::verifikasiMember');
@@ -255,7 +265,12 @@ $routes->group('admin/bpdes', ['namespace' => 'App\Controllers\admin'], function
     // $routes->get('verifikasi-member', 'Bpdes::verifikasiMember');
     $routes->get('aduan', 'Bpdes::listAduan');
     $routes->post('aduan/kirim', 'Bpdes::kirimAduan');
+    $routes->get('artikel', 'Bpdes::indexArtikel');
     $routes->get('buat-artikel', 'Bpdes::buatArtikel');
+    $routes->post('simpan-artikel', 'Bpdes::simpanArtikel');
+    $routes->get('edit-artikel/(:num)', 'Bpdes::editArtikel/$1');
+    $routes->post('update-artikel/(:num)', 'Bpdes::updateArtikel/$1');
+    $routes->post('delete-artikel/(:num)', 'Bpdes::deleteArtikel/$1');
     $routes->get('buat-acara', 'Bpdes::buatAcara');
 
 
