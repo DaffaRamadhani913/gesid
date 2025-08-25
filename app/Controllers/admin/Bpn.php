@@ -122,8 +122,12 @@ class Bpn extends BaseController
             'konten' => $this->request->getPost('konten'),
             'gambar' => $gambarPath,
             'tanggal_publikasi' => date('Y-m-d H:i:s'),
-            'kategori' => $this->request->getPost('kategori')
+            'kategori' => $this->request->getPost('kategori'),
+            'status' => 'pending',                           // (or whatever default you use)
+            'created_by' => session()->get('user_id'),           // keep INT id
+            'created_label' => $this->resolvePublisherLabel(),      // 👈 human-friendly label
         ]);
+
 
         // ✅ flash success message
         return redirect()->to('/admin/bpn/artikel')->with('success', 'Artikel berhasil diupload!');
@@ -196,11 +200,46 @@ class Bpn extends BaseController
             'kategori' => $this->request->getPost('kategori'),
             'konten' => $this->request->getPost('konten'),
             'gambar' => $gambarPath
+            // do NOT change created_label here
         ]);
+
 
         return redirect()->to('/admin/bpn/artikel')->with('success', 'Artikel berhasil diperbarui!');
     }
 
+    private function lookup(string $table, string $pk, $id, string $col): ?string
+    {
+        if (empty($id))
+            return null;
+        $db = \Config\Database::connect();
+        $row = $db->table($table)->select($col)->where($pk, $id)->get()->getRowArray();
+        return $row[$col] ?? null;
+    }
+
+    private function resolvePublisherLabel(): string
+    {
+        $role = strtolower((string) session()->get('role'));
+
+        switch ($role) {
+            case 'bpn':
+                return 'BPN';
+            case 'bpw': {
+                // expect session()->get('id_provinsi')
+                $name = $this->lookup('tb_provinsi', 'id_provinsi', session()->get('id_provinsi'), 'nama_provinsi');
+                return $name ?: 'BPW';
+            }
+            case 'bpd': {
+                $name = $this->lookup('tb_kota_kabupaten', 'id_kota', session()->get('id_kota'), 'nama_kota');
+                return $name ?: 'BPD';
+            }
+            case 'bpdes': {
+                $name = $this->lookup('tb_desa_kelurahan', 'id_desa', session()->get('id_desa'), 'nama_desa');
+                return $name ?: 'BPDes';
+            }
+            default:
+                return strtoupper($role ?: 'BPN');
+        }
+    }
 
 
 

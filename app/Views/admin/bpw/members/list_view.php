@@ -11,7 +11,6 @@ $namaProv = $provinsi['nama_provinsi'] ?? session()->get('nama_provinsi') ?? '';
     <h2 class="text-primary fw-bold">
       Data Member GESID - BPW<?= $namaProv ? ' (' . esc($namaProv) . ')' : '' ?>
     </h2>
-
     <p class="text-muted">Berikut adalah daftar member yang telah terdaftar di wilayah BPW.</p>
   </div>
 

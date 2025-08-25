@@ -148,6 +148,12 @@ $routes->group('admin/superadmin', ['namespace' => 'App\Controllers\admin'], fun
     $routes->get('/', 'superadmin::dashboard'); // akses via /admin/bpn
     $routes->get('data-member', 'superadmin::dataMember');
 });
+$routes->group('admin/superadmin', ['namespace' => 'App\Controllers'], function ($routes) {
+    $routes->get('verifikasi-artikel', 'VerifikasiArtikel::index');
+    $routes->get('verifikasi-artikel/approve/(:num)', 'VerifikasiArtikel::approve/$1');
+    $routes->get('verifikasi-artikel/reject/(:num)', 'VerifikasiArtikel::reject/$1');
+});
+
 
 $routes->group('admin/superadmin', ['namespace' => 'App\Controllers\admin\TambahAdmin'], function ($routes) {
 

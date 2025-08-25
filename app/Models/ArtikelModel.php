@@ -16,8 +16,10 @@ class ArtikelModel extends Model
         'gambar',
         'tanggal_publikasi',
         'status',
-        'created_by'
+        'created_by',
+        'created_label',   // ⬅️ add this
     ];
+
 
     // Auto-manage created_at and updated_at
     protected $useTimestamps = true;
@@ -33,8 +35,8 @@ class ArtikelModel extends Model
     public function getApprovedArticles()
     {
         return $this->where('status', 'approved')
-                    ->orderBy('tanggal_publikasi', 'DESC')
-                    ->findAll();
+            ->orderBy('tanggal_publikasi', 'DESC')
+            ->findAll();
     }
 
     /**
@@ -43,8 +45,8 @@ class ArtikelModel extends Model
     public function getPendingArticles()
     {
         return $this->where('status', 'pending')
-                    ->orderBy('created_at', 'DESC')
-                    ->findAll();
+            ->orderBy('created_at', 'DESC')
+            ->findAll();
     }
 
     /**
@@ -53,8 +55,8 @@ class ArtikelModel extends Model
     public function getByCategory($kategori)
     {
         return $this->where('status', 'approved')
-                    ->where('kategori', $kategori)
-                    ->orderBy('tanggal_publikasi', 'DESC')
-                    ->findAll();
+            ->where('kategori', $kategori)
+            ->orderBy('tanggal_publikasi', 'DESC')
+            ->findAll();
     }
 }

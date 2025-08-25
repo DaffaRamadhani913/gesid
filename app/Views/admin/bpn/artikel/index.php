@@ -39,28 +39,31 @@
                             <td><?= esc($artikel['kategori']) ?></td>
                             <td><?= date('d M Y', strtotime($artikel['tanggal_publikasi'])) ?></td>
                             <td>
-                                <?php if ($artikel['status'] == 'published'): ?>
-                                    <span class="badge bg-success">Published</span>
+                                <?php if ($artikel['status'] == 'approved'): ?>
+                                    <span class="badge bg-success">Terpublikasi</span>
+                                <?php elseif ($artikel['status'] == 'rejected'): ?>
+                                    <span class="badge bg-danger">Ditolak</span>
                                 <?php else: ?>
-                                    <span class="badge bg-info">Pending</span>
+                                    <span class="badge bg-info">Menunggu</span>
                                 <?php endif; ?>
                             </td>
+
+
                             <td>
                                 <?php if (!empty($artikel['gambar'])): ?>
-                                    <img src="<?= base_url($artikel['gambar']) ?>" alt="thumbnail"
-                                         class="img-thumbnail" style="max-width: 80px;">
+                                    <img src="<?= base_url($artikel['gambar']) ?>" alt="thumbnail" class="img-thumbnail"
+                                        style="max-width: 80px;">
                                 <?php else: ?>
                                     <span class="text-muted">-</span>
                                 <?php endif; ?>
                             </td>
                             <td>
                                 <a href="<?= base_url('admin/bpn/edit-artikel/' . $artikel['id']) ?>"
-                                   class="btn btn-sm btn-warning">
+                                    class="btn btn-sm btn-warning">
                                     <i class="bi bi-pencil-square"></i> Edit
                                 </a>
-                                <form action="<?= base_url('admin/bpn/delete-artikel/' . $artikel['id']) ?>"
-                                      method="post" class="d-inline"
-                                      onsubmit="return confirm('Yakin ingin menghapus artikel ini?');">
+                                <form action="<?= base_url('admin/bpn/delete-artikel/' . $artikel['id']) ?>" method="post"
+                                    class="d-inline" onsubmit="return confirm('Yakin ingin menghapus artikel ini?');">
                                     <?= csrf_field() ?>
                                     <button type="submit" class="btn btn-sm btn-danger">
                                         <i class="bi bi-trash"></i> Hapus
